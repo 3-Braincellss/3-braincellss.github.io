@@ -111,11 +111,13 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Source Code</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="apidocs/shell.html">Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apidocs/run.html">Run</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apidocs/session.html">session</a></li>
 <li class="toctree-l1"><a class="reference internal" href="apidocs/apps.html">apps</a></li>
 <li class="toctree-l1"><a class="reference internal" href="apidocs/common.html">common</a></li>
 <li class="toctree-l1"><a class="reference internal" href="apidocs/exceptions.html">exceptions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="apidocs/operations.html">operations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="apidocs/shell.html">Shell</a></li>
 <li class="toctree-l1"><a class="reference internal" href="apidocs/shellparser.html">shellparser</a></li>
 </ul>
 
@@ -219,6 +221,8 @@
 </li>
       <li><a href="apidocs/apps.html#apps.app_factory.AppFactory">AppFactory (class in apps.app_factory)</a>
 </li>
+      <li><a href="apidocs/session.html#session.applexer.AppLexer">AppLexer (class in session.applexer)</a>
+</li>
       <li><a href="apidocs/exceptions.html#exceptions.appnotfounderr.AppNotFoundError">AppNotFoundError</a>
 </li>
       <li>
@@ -229,7 +233,11 @@
 </li>
       </ul></li>
       <li><a href="apidocs/apps.html#apps.app_factory.AppFactory.apps">apps (AppFactory attribute)</a>
+
+      <ul>
+        <li><a href="apidocs/session.html#session.applexer.AppLexer.apps">(AppLexer attribute)</a>
 </li>
+      </ul></li>
       <li>
     apps.app
 
@@ -259,12 +267,21 @@
 </li>
       </ul></li>
       <li>
+    apps.clear
+
+      <ul>
+        <li><a href="apidocs/apps.html#module-apps.clear">module</a>
+</li>
+      </ul></li>
+      <li>
     apps.cut
 
       <ul>
         <li><a href="apidocs/apps.html#module-apps.cut">module</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li>
     apps.echo
 
@@ -272,8 +289,6 @@
         <li><a href="apidocs/apps.html#module-apps.echo">module</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li>
     apps.find
 
@@ -365,6 +380,8 @@
 </li>
       <li><a href="apidocs/apps.html#apps.cd.CdApp">CdApp (class in apps.cd)</a>
 </li>
+      <li><a href="apidocs/apps.html#apps.clear.ClearApp">ClearApp (class in apps.clear)</a>
+</li>
       <li><a href="apidocs/shellparser.html#shellparser.parser.ShellTransformer.command">command() (ShellTransformer method)</a>
 </li>
   </ul></td>
@@ -444,7 +461,14 @@
         <li><a href="apidocs/exceptions.html#module-exceptions.shellerr">module</a>
 </li>
       </ul></li>
-      <li><a href="apidocs/shell.html#shell.Shell.execute">execute() (Shell static method)</a>
+      <li>
+    exceptions.syntaxerr
+
+      <ul>
+        <li><a href="apidocs/exceptions.html#module-exceptions.syntaxerr">module</a>
+</li>
+      </ul></li>
+      <li><a href="apidocs/shell.html#shell.execute">execute() (in module shell)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -461,6 +485,8 @@
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="apidocs/apps.html#apps.app_factory.AppFactory.get_app">get_app() (AppFactory static method)</a>
+</li>
+      <li><a href="apidocs/session.html#session.ShellPathCompleter.get_completions">get_completions() (ShellPathCompleter method)</a>, <a href="apidocs/session.html#session.completer.ShellPathCompleter.get_completions">[1]</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
@@ -512,6 +538,8 @@
 </li>
         <li><a href="apidocs/apps.html#module-apps.cd">apps.cd</a>
 </li>
+        <li><a href="apidocs/apps.html#module-apps.clear">apps.clear</a>
+</li>
         <li><a href="apidocs/apps.html#module-apps.cut">apps.cut</a>
 </li>
         <li><a href="apidocs/apps.html#module-apps.echo">apps.echo</a>
@@ -548,6 +576,8 @@
 </li>
         <li><a href="apidocs/exceptions.html#module-exceptions.shellerr">exceptions.shellerr</a>
 </li>
+        <li><a href="apidocs/exceptions.html#module-exceptions.syntaxerr">exceptions.syntaxerr</a>
+</li>
         <li><a href="apidocs/operations.html#module-operations">operations</a>
 </li>
         <li><a href="apidocs/operations.html#module-operations.call">operations.call</a>
@@ -559,6 +589,16 @@
         <li><a href="apidocs/operations.html#module-operations.pipe">operations.pipe</a>
 </li>
         <li><a href="apidocs/operations.html#module-operations.sequence">operations.sequence</a>
+</li>
+        <li><a href="apidocs/run.html#module-run">run</a>
+</li>
+        <li><a href="apidocs/session.html#module-session">session</a>
+</li>
+        <li><a href="apidocs/session.html#module-session.applexer">session.applexer</a>
+</li>
+        <li><a href="apidocs/session.html#module-session.completer">session.completer</a>
+</li>
+        <li><a href="apidocs/session.html#module-session.shellsession">session.shellsession</a>
 </li>
         <li><a href="apidocs/shell.html#module-shell">shell</a>
 </li>
@@ -655,8 +695,6 @@
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="apidocs/shell.html#shell.Shell.PREFIX">PREFIX (Shell attribute)</a>
-</li>
       <li><a href="apidocs/common.html#common.tools.prettify_path">prettify_path() (in module common.tools)</a>
 </li>
       <li><a href="apidocs/apps.html#apps.pwd.PwdApp">PwdApp (class in apps.pwd)</a>
@@ -685,6 +723,13 @@
 </li>
       <li><a href="apidocs/operations.html#operations.call.Call.right_red">right_red (Call attribute)</a>
 </li>
+      <li>
+    run
+
+      <ul>
+        <li><a href="apidocs/run.html#module-run">module</a>
+</li>
+      </ul></li>
       <li><a href="apidocs/apps.html#apps.app.App.run">run() (App method)</a>
 
       <ul>
@@ -693,6 +738,8 @@
         <li><a href="apidocs/apps.html#apps.cat.CatApp.run">(CatApp method)</a>
 </li>
         <li><a href="apidocs/apps.html#apps.cd.CdApp.run">(CdApp method)</a>
+</li>
+        <li><a href="apidocs/apps.html#apps.clear.ClearApp.run">(ClearApp method)</a>
 </li>
         <li><a href="apidocs/apps.html#apps.cut.CutApp.run">(CutApp method)</a>
 </li>
@@ -714,7 +761,7 @@
 </li>
         <li><a href="apidocs/operations.html#operations.sequence.Sequence.run">(Sequence method)</a>
 </li>
-        <li><a href="apidocs/shell.html#shell.Shell.run">(Shell method)</a>
+        <li><a href="apidocs/session.html#session.ShellSession.run">(ShellSession method)</a>, <a href="apidocs/session.html#session.shellsession.ShellSession.run">[1]</a>
 </li>
         <li><a href="apidocs/apps.html#apps.sort.SortApp.run">(SortApp method)</a>
 </li>
@@ -742,16 +789,44 @@
       <li><a href="apidocs/operations.html#operations.sequence.Sequence">Sequence (class in operations.sequence)</a>
 </li>
       <li>
+    session
+
+      <ul>
+        <li><a href="apidocs/session.html#module-session">module</a>
+</li>
+      </ul></li>
+      <li>
+    session.applexer
+
+      <ul>
+        <li><a href="apidocs/session.html#module-session.applexer">module</a>
+</li>
+      </ul></li>
+      <li>
+    session.completer
+
+      <ul>
+        <li><a href="apidocs/session.html#module-session.completer">module</a>
+</li>
+      </ul></li>
+      <li>
+    session.shellsession
+
+      <ul>
+        <li><a href="apidocs/session.html#module-session.shellsession">module</a>
+</li>
+      </ul></li>
+      <li>
     shell
 
       <ul>
         <li><a href="apidocs/shell.html#module-shell">module</a>
 </li>
       </ul></li>
-      <li><a href="apidocs/shell.html#shell.Shell">Shell (class in shell)</a>
-</li>
       <li><a href="apidocs/exceptions.html#exceptions.shellerr.ShellError">ShellError</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li>
     shellparser
 
@@ -759,8 +834,6 @@
         <li><a href="apidocs/shellparser.html#module-shellparser">module</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li>
     shellparser.parser
 
@@ -768,6 +841,20 @@
         <li><a href="apidocs/shellparser.html#module-shellparser.parser">module</a>
 </li>
       </ul></li>
+      <li><a href="apidocs/session.html#session.ShellPathCompleter">ShellPathCompleter (class in session)</a>
+
+      <ul>
+        <li><a href="apidocs/session.html#session.completer.ShellPathCompleter">(class in session.completer)</a>
+</li>
+      </ul></li>
+      <li><a href="apidocs/session.html#session.ShellSession">ShellSession (class in session)</a>
+
+      <ul>
+        <li><a href="apidocs/session.html#session.shellsession.ShellSession">(class in session.shellsession)</a>
+</li>
+      </ul></li>
+      <li><a href="apidocs/exceptions.html#exceptions.syntaxerr.ShellSyntaxError">ShellSyntaxError</a>
+</li>
       <li><a href="apidocs/shellparser.html#shellparser.parser.ShellTransformer">ShellTransformer (class in shellparser.parser)</a>
 </li>
       <li><a href="apidocs/common.html#common.tools.simple_globbing">simple_globbing() (in module common.tools)</a>
@@ -785,6 +872,10 @@
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="apidocs/apps.html#apps.tail.TailApp">TailApp (class in apps.tail)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="apidocs/session.html#session.applexer.AppLexer.tokens">tokens (AppLexer attribute)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -813,6 +904,8 @@
 </li>
         <li><a href="apidocs/apps.html#apps.cd.CdApp.validate_args">(CdApp method)</a>
 </li>
+        <li><a href="apidocs/apps.html#apps.clear.ClearApp.validate_args">(ClearApp method)</a>
+</li>
         <li><a href="apidocs/apps.html#apps.cut.CutApp.validate_args">(CutApp method)</a>
 </li>
         <li><a href="apidocs/apps.html#apps.echo.EchoApp.validate_args">(EchoApp method)</a>
@@ -834,18 +927,6 @@
         <li><a href="apidocs/apps.html#apps.uniq.UniqApp.validate_args">(UniqApp method)</a>
 </li>
         <li><a href="apidocs/apps.html#apps.unsafe.UnsafeApp.validate_args">(UnsafeApp method)</a>
-</li>
-      </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="apidocs/operations.html#operations.call.Call.validate_context">validate_context() (Call method)</a>
-
-      <ul>
-        <li><a href="apidocs/operations.html#operations.operation.Operation.validate_context">(Operation method)</a>
-</li>
-        <li><a href="apidocs/operations.html#operations.pipe.Pipe.validate_context">(Pipe method)</a>
-</li>
-        <li><a href="apidocs/operations.html#operations.sequence.Sequence.validate_context">(Sequence method)</a>
 </li>
       </ul></li>
   </ul></td>

@@ -42,7 +42,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="common" href="common.html" />
-    <link rel="prev" title="Program Flow" href="../markdown/development.html" /> 
+    <link rel="prev" title="session" href="session.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -113,11 +113,15 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Source Code</span></p>
 <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="shell.html">Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="run.html">Run</a></li>
+<li class="toctree-l1"><a class="reference internal" href="session.html">session</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">apps</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#app">app</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#app-factory">app_factory</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#cat">cat</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#cd">cd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#clear">clear</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#cut">cut</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#echo">echo</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#find">find</a></li>
@@ -134,7 +138,6 @@
 <li class="toctree-l1"><a class="reference internal" href="common.html">common</a></li>
 <li class="toctree-l1"><a class="reference internal" href="exceptions.html">exceptions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="operations.html">operations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="shell.html">Shell</a></li>
 <li class="toctree-l1"><a class="reference internal" href="shellparser.html">shellparser</a></li>
 </ul>
 
@@ -211,7 +214,7 @@
 <p>This module provides an interface for an App.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="apps.app.App">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">App</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#apps.app.App" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">App</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#apps.app.App" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>An abstract class representing the format of all Apps.</p>
 <dl class="field-list simple">
@@ -222,14 +225,14 @@ the application.</p>
 </dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="apps.app.App.validate_args">
-<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">validate_args</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#apps.app.App.validate_args" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">abstract</span> </em><span class="sig-name descname"><span class="pre">validate_args</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#apps.app.App.validate_args" title="Permalink to this definition">¶</a></dt>
 <dd><p>Checks whether the given args are appropriate for the application.</p>
 <p>Does <strong>NOT</strong> affect actual execution behaviour</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="apps.app.App.run">
-<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inp</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#apps.app.App.run" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">abstract</span> </em><span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inp</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#apps.app.App.run" title="Permalink to this definition">¶</a></dt>
 <dd><p>Executes the application on the given arguments.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -258,12 +261,12 @@ execution.</p>
 <p>Module for creating applications.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="apps.app_factory.AppFactory">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">AppFactory</span></span><a class="headerlink" href="#apps.app_factory.AppFactory" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">AppFactory</span></span><a class="headerlink" href="#apps.app_factory.AppFactory" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>A class used to create app objects</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="apps.app_factory.AppFactory.apps">
-<span class="sig-name descname"><span class="pre">apps</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'cat':</span> <span class="pre">&lt;class</span> <span class="pre">'apps.cat.CatApp'&gt;,</span> <span class="pre">'cd':</span> <span class="pre">&lt;class</span> <span class="pre">'apps.cd.CdApp'&gt;,</span> <span class="pre">'cut':</span> <span class="pre">&lt;class</span> <span class="pre">'apps.cut.CutApp'&gt;,</span> <span class="pre">'echo':</span> <span class="pre">&lt;class</span> <span class="pre">'apps.echo.EchoApp'&gt;,</span> <span class="pre">'find':</span> <span class="pre">&lt;class</span> <span class="pre">'apps.find.FindApp'&gt;,</span> <span class="pre">'grep':</span> <span class="pre">&lt;class</span> <span class="pre">'apps.grep.GrepApp'&gt;,</span> <span class="pre">'head':</span> <span class="pre">&lt;class</span> <span class="pre">'apps.head.HeadApp'&gt;,</span> <span class="pre">'ls':</span> <span class="pre">&lt;class</span> <span class="pre">'apps.ls.LsApp'&gt;,</span> <span class="pre">'pwd':</span> <span class="pre">&lt;class</span> <span class="pre">'apps.pwd.PwdApp'&gt;,</span> <span class="pre">'sort':</span> <span class="pre">&lt;class</span> <span class="pre">'apps.sort.SortApp'&gt;,</span> <span class="pre">'tail':</span> <span class="pre">&lt;class</span> <span class="pre">'apps.tail.TailApp'&gt;,</span> <span class="pre">'uniq':</span> <span class="pre">&lt;class</span> <span class="pre">'apps.uniq.UniqApp'&gt;}</span></em><a class="headerlink" href="#apps.app_factory.AppFactory.apps" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">apps</span></span><em class="property"> <span class="pre">=</span> <span class="pre">{'cat':</span> <span class="pre">&lt;class</span> <span class="pre">'apps.cat.CatApp'&gt;,</span> <span class="pre">'cd':</span> <span class="pre">&lt;class</span> <span class="pre">'apps.cd.CdApp'&gt;,</span> <span class="pre">'clear':</span> <span class="pre">&lt;class</span> <span class="pre">'apps.clear.ClearApp'&gt;,</span> <span class="pre">'cut':</span> <span class="pre">&lt;class</span> <span class="pre">'apps.cut.CutApp'&gt;,</span> <span class="pre">'echo':</span> <span class="pre">&lt;class</span> <span class="pre">'apps.echo.EchoApp'&gt;,</span> <span class="pre">'find':</span> <span class="pre">&lt;class</span> <span class="pre">'apps.find.FindApp'&gt;,</span> <span class="pre">'grep':</span> <span class="pre">&lt;class</span> <span class="pre">'apps.grep.GrepApp'&gt;,</span> <span class="pre">'head':</span> <span class="pre">&lt;class</span> <span class="pre">'apps.head.HeadApp'&gt;,</span> <span class="pre">'ls':</span> <span class="pre">&lt;class</span> <span class="pre">'apps.ls.LsApp'&gt;,</span> <span class="pre">'pwd':</span> <span class="pre">&lt;class</span> <span class="pre">'apps.pwd.PwdApp'&gt;,</span> <span class="pre">'sort':</span> <span class="pre">&lt;class</span> <span class="pre">'apps.sort.SortApp'&gt;,</span> <span class="pre">'tail':</span> <span class="pre">&lt;class</span> <span class="pre">'apps.tail.TailApp'&gt;,</span> <span class="pre">'uniq':</span> <span class="pre">&lt;class</span> <span class="pre">'apps.uniq.UniqApp'&gt;}</span></em><a class="headerlink" href="#apps.app_factory.AppFactory.apps" title="Permalink to this definition">¶</a></dt>
 <dd><p>A dictionary that maps app names to their classes</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
@@ -274,7 +277,7 @@ execution.</p>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="apps.app_factory.AppFactory.no_glob">
-<span class="sig-name descname"><span class="pre">no_glob</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'find'}</span></em><a class="headerlink" href="#apps.app_factory.AppFactory.no_glob" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">no_glob</span></span><em class="property"> <span class="pre">=</span> <span class="pre">{'find'}</span></em><a class="headerlink" href="#apps.app_factory.AppFactory.no_glob" title="Permalink to this definition">¶</a></dt>
 <dd><p>A set of apps that don’t require globbing</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
@@ -285,7 +288,7 @@ execution.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="apps.app_factory.AppFactory.get_app">
-<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_app</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">app_str</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">opts</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#apps.app.App" title="apps.app.App"><span class="pre">apps.app.App</span></a></span></span><a class="headerlink" href="#apps.app_factory.AppFactory.get_app" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">get_app</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">app_str</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">opts</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">list</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#apps.app.App" title="apps.app.App"><span class="pre">apps.app.App</span></a></span></span><a class="headerlink" href="#apps.app_factory.AppFactory.get_app" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns an app object based on the app_str given.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -320,7 +323,7 @@ Usage in shell: cat [FILES]…</p>
 <p>cat bee-movie-script.txt</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="apps.cat.CatApp">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">CatApp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#apps.cat.CatApp" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">CatApp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#apps.cat.CatApp" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#apps.app.App" title="apps.app.App"><code class="xref py py-class docutils literal notranslate"><span class="pre">apps.app.App</span></code></a></p>
 <p>A class representing the cat command line instruction</p>
 <dl class="field-list simple">
@@ -370,7 +373,7 @@ Usage in shell: cd PATH</p>
 <p><cite>cd foo/bar/baz</cite></p>
 <dl class="py class">
 <dt class="sig sig-object py" id="apps.cd.CdApp">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">CdApp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#apps.cd.CdApp" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">CdApp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#apps.cd.CdApp" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#apps.app.App" title="apps.app.App"><code class="xref py py-class docutils literal notranslate"><span class="pre">apps.app.App</span></code></a></p>
 <p>A class representing the cd shell instruction</p>
 <dl class="field-list simple">
@@ -427,6 +430,36 @@ the given path exists.</p>
 </dd></dl>
 
 </div>
+<span class="target" id="module-apps.clear"></span><div class="section" id="clear">
+<h2>clear<a class="headerlink" href="#clear" title="Permalink to this headline">¶</a></h2>
+<p>Module representing the clear application.</p>
+<p>Usage in shell: <code class="docutils literal notranslate"><span class="pre">clear</span></code></p>
+<dl class="py class">
+<dt class="sig sig-object py" id="apps.clear.ClearApp">
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">ClearApp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#apps.clear.ClearApp" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#apps.app.App" title="apps.app.App"><code class="xref py py-class docutils literal notranslate"><span class="pre">apps.app.App</span></code></a></p>
+<p>A class representing the clear application</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>args</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">list</span></code>) – Contains all the arguments and options of
+the instruction.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="apps.clear.ClearApp.run">
+<span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inp</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#apps.clear.ClearApp.run" title="Permalink to this definition">¶</a></dt>
+<dd><p>Clears the terminal</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="apps.clear.ClearApp.validate_args">
+<span class="sig-name descname"><span class="pre">validate_args</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#apps.clear.ClearApp.validate_args" title="Permalink to this definition">¶</a></dt>
+<dd><p>clear is not expecting any arguments</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
 <span class="target" id="module-apps.cut"></span><div class="section" id="cut">
 <h2>cut<a class="headerlink" href="#cut" title="Permalink to this headline">¶</a></h2>
 <p>Module representing the cut application
@@ -435,7 +468,7 @@ Usage in shell: cut -b [RANGES] [FILES]…</p>
 <p><cite>cut -b 0-23 rick-roll.txt</cite></p>
 <dl class="py class">
 <dt class="sig sig-object py" id="apps.cut.CutApp">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">CutApp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#apps.cut.CutApp" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">CutApp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#apps.cut.CutApp" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#apps.app.App" title="apps.app.App"><code class="xref py py-class docutils literal notranslate"><span class="pre">apps.app.App</span></code></a></p>
 <p>A class representing the cut shell instruction</p>
 <dl class="field-list simple">
@@ -495,7 +528,7 @@ Usage in shell: echo [ARGS]…</p>
 <p><cite>echo hello world</cite></p>
 <dl class="py class">
 <dt class="sig sig-object py" id="apps.echo.EchoApp">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">EchoApp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#apps.echo.EchoApp" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">EchoApp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#apps.echo.EchoApp" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#apps.app.App" title="apps.app.App"><code class="xref py py-class docutils literal notranslate"><span class="pre">apps.app.App</span></code></a></p>
 <p>A class representing the echo shell command</p>
 <dl class="field-list simple">
@@ -545,7 +578,7 @@ Usage in shell: find -name [PATTERN] [PATH]</p>
 <p><code class="docutils literal notranslate"><span class="pre">find</span> <span class="pre">-name</span> <span class="pre">*.py</span> <span class="pre">project/spaghetti-code</span></code></p>
 <dl class="py class">
 <dt class="sig sig-object py" id="apps.find.FindApp">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">FindApp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#apps.find.FindApp" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">FindApp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#apps.find.FindApp" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#apps.app.App" title="apps.app.App"><code class="xref py py-class docutils literal notranslate"><span class="pre">apps.app.App</span></code></a></p>
 <p>A class representing the find shell instruction</p>
 <dl class="field-list simple">
@@ -608,7 +641,7 @@ Usage in shell: grep [PATTERN] [FILE]*</p>
 <p>grep BARRY! bee-movie.txt</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="apps.grep.GrepApp">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">GrepApp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#apps.grep.GrepApp" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">GrepApp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#apps.grep.GrepApp" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#apps.app.App" title="apps.app.App"><code class="xref py py-class docutils literal notranslate"><span class="pre">apps.app.App</span></code></a></p>
 <p>A class representing the grep shell intstruction</p>
 <dl class="field-list simple">
@@ -669,7 +702,7 @@ Usage in shell: head [OPTIONS] [FILE]</p>
 <p><cite>head -n 12 text.txt</cite></p>
 <dl class="py class">
 <dt class="sig sig-object py" id="apps.head.HeadApp">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">HeadApp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#apps.head.HeadApp" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">HeadApp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#apps.head.HeadApp" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#apps.app.App" title="apps.app.App"><code class="xref py py-class docutils literal notranslate"><span class="pre">apps.app.App</span></code></a></p>
 <p>A class representing the head shell application</p>
 <dl class="field-list simple">
@@ -722,7 +755,7 @@ Usage in shell: ls [PATH]</p>
 <p><cite>ls super/secret/directory</cite></p>
 <dl class="py class">
 <dt class="sig sig-object py" id="apps.ls.LsApp">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">LsApp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#apps.ls.LsApp" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">LsApp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#apps.ls.LsApp" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#apps.app.App" title="apps.app.App"><code class="xref py py-class docutils literal notranslate"><span class="pre">apps.app.App</span></code></a></p>
 <p>A class representing the ls shell instruction</p>
 <p>Lists all files and directory in the specified directories. If none is
@@ -785,7 +818,7 @@ Usage in shell: pwd</p>
 <p><cite>pwd</cite></p>
 <dl class="py class">
 <dt class="sig sig-object py" id="apps.pwd.PwdApp">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">PwdApp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#apps.pwd.PwdApp" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">PwdApp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#apps.pwd.PwdApp" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#apps.app.App" title="apps.app.App"><code class="xref py py-class docutils literal notranslate"><span class="pre">apps.app.App</span></code></a></p>
 <p>A class representing the pwd shell instruction</p>
 <dl class="field-list simple">
@@ -841,7 +874,7 @@ Usage in shell: sort [OPTIONS] [FILE]</p>
 <p><cite>sort my-life.txt</cite></p>
 <dl class="py class">
 <dt class="sig sig-object py" id="apps.sort.SortApp">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">SortApp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#apps.sort.SortApp" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">SortApp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#apps.sort.SortApp" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#apps.app.App" title="apps.app.App"><code class="xref py py-class docutils literal notranslate"><span class="pre">apps.app.App</span></code></a></p>
 <p>A class representing the sort shell instruction.</p>
 <dl class="field-list simple">
@@ -900,7 +933,7 @@ Usage in shell: tail [OPTIONS] [FILE]</p>
 <p><cite>tail some-file.py</cite></p>
 <dl class="py class">
 <dt class="sig sig-object py" id="apps.tail.TailApp">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">TailApp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#apps.tail.TailApp" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">TailApp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#apps.tail.TailApp" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#apps.app.App" title="apps.app.App"><code class="xref py py-class docutils literal notranslate"><span class="pre">apps.app.App</span></code></a></p>
 <p>A class representing the tail shell command</p>
 <dl class="field-list simple">
@@ -953,7 +986,7 @@ Usage in shell: uniq [OPTIONS] [FILE]..</p>
 <p><cite>uniq -i test-ans.txt</cite></p>
 <dl class="py class">
 <dt class="sig sig-object py" id="apps.uniq.UniqApp">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">UniqApp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#apps.uniq.UniqApp" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">UniqApp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#apps.uniq.UniqApp" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#apps.app.App" title="apps.app.App"><code class="xref py py-class docutils literal notranslate"><span class="pre">apps.app.App</span></code></a></p>
 <p>Class representing the uniq shell application</p>
 <dl class="field-list simple">
@@ -1005,7 +1038,7 @@ Usage in shell: _application [OPTIONS] [ARGS]</p>
 <p><cite>_head file-that-does-not-exist.txt</cite></p>
 <dl class="py class">
 <dt class="sig sig-object py" id="apps.unsafe.UnsafeApp">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">UnsafeApp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">app</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#apps.unsafe.UnsafeApp" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">UnsafeApp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">app</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#apps.unsafe.UnsafeApp" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#apps.app.App" title="apps.app.App"><code class="xref py py-class docutils literal notranslate"><span class="pre">apps.app.App</span></code></a></p>
 <p>A class representing the unsafe shell application decorator</p>
 <dl class="field-list simple">
@@ -1040,7 +1073,7 @@ is added to the deque like normal.</p>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
         <a href="common.html" class="btn btn-neutral float-right" title="common" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="../markdown/development.html" class="btn btn-neutral float-left" title="Program Flow" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="session.html" class="btn btn-neutral float-left" title="session" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>

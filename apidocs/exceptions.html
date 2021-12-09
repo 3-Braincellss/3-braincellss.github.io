@@ -113,6 +113,9 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Source Code</span></p>
 <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="shell.html">Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="run.html">Run</a></li>
+<li class="toctree-l1"><a class="reference internal" href="session.html">session</a></li>
 <li class="toctree-l1"><a class="reference internal" href="apps.html">apps</a></li>
 <li class="toctree-l1"><a class="reference internal" href="common.html">common</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">exceptions</a><ul>
@@ -120,10 +123,10 @@
 <li class="toctree-l2"><a class="reference internal" href="#context-error">Context Error</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#run-error">Run Error</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#shell-error">Shell Error</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#shell-syntax-error">Shell Syntax Error</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="operations.html">operations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="shell.html">Shell</a></li>
 <li class="toctree-l1"><a class="reference internal" href="shellparser.html">shellparser</a></li>
 </ul>
 
@@ -202,7 +205,7 @@ of that interface.</p>
 <p>An error that is raised whenever an app is not found.</p>
 <dl class="py exception">
 <dt class="sig sig-object py" id="exceptions.appnotfounderr.AppNotFoundError">
-<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">AppNotFoundError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">app_str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#exceptions.appnotfounderr.AppNotFoundError" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">exception</span> </em><span class="sig-name descname"><span class="pre">AppNotFoundError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">app_str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#exceptions.appnotfounderr.AppNotFoundError" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#exceptions.shellerr.ShellError" title="exceptions.shellerr.ShellError"><code class="xref py py-class docutils literal notranslate"><span class="pre">exceptions.shellerr.ShellError</span></code></a></p>
 <p>Errors that occur when shell doesn’t know the app you are trying to run</p>
 <p>These errors are called by the <cite>AppFactory</cite>, in case it is not aware of
@@ -216,7 +219,7 @@ prevent this error from appearing.</p>
 <p>They prevent apps from being run.</p>
 <dl class="py exception">
 <dt class="sig sig-object py" id="exceptions.contexterr.ContextError">
-<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ContextError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">app_str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'GO</span> <span class="pre">AWAY</span> <span class="pre">&gt;=['</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#exceptions.contexterr.ContextError" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">exception</span> </em><span class="sig-name descname"><span class="pre">ContextError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">app_str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'GO</span> <span class="pre">AWAY</span> <span class="pre">&gt;=['</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#exceptions.contexterr.ContextError" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#exceptions.shellerr.ShellError" title="exceptions.shellerr.ShellError"><code class="xref py py-class docutils literal notranslate"><span class="pre">exceptions.shellerr.ShellError</span></code></a></p>
 <p>Context errors that prevent apps from being run</p>
 <p>Each app has a <code class="docutils literal notranslate"><span class="pre">validate_args()</span></code> method that is run right before the
@@ -224,7 +227,8 @@ app is run. This method will check options that are passed to the app
 and raise <code class="docutils literal notranslate"><span class="pre">ContextError</span></code> if they don’t make sense.
 <code class="docutils literal notranslate"><span class="pre">ContextError</span></code> exists to prevent apps from running
 when they are doomed to fail based on options alone,
-which should hopefully prevent wasting some CPU power when it’s unnecessary.</p>
+which should hopefully prevent wasting some CPU power when it’s
+unnecessary.</p>
 <p>These errors <strong>WILL</strong> be ignored with <strong>unsafe</strong> apps.</p>
 </dd></dl>
 
@@ -234,7 +238,7 @@ which should hopefully prevent wasting some CPU power when it’s unnecessary.</
 <p>Errors that are raised during runtime.</p>
 <dl class="py exception">
 <dt class="sig sig-object py" id="exceptions.runerr.RunError">
-<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">RunError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">app_str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Oops,</span> <span class="pre">something</span> <span class="pre">went</span> <span class="pre">wrong'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#exceptions.runerr.RunError" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">exception</span> </em><span class="sig-name descname"><span class="pre">RunError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">app_str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Oops,</span> <span class="pre">something</span> <span class="pre">went</span> <span class="pre">wrong'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#exceptions.runerr.RunError" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#exceptions.shellerr.ShellError" title="exceptions.shellerr.ShellError"><code class="xref py py-class docutils literal notranslate"><span class="pre">exceptions.shellerr.ShellError</span></code></a></p>
 <p>Errors that occur during app’s runtime</p>
 <p>Even if an app passes context checking phase, it can still cause some
@@ -248,7 +252,7 @@ errors. Whenever this happens an <cite>AppRunException</cite> is raised.</p>
 <p>General error interface</p>
 <dl class="py exception">
 <dt class="sig sig-object py" id="exceptions.shellerr.ShellError">
-<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ShellError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">app_str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Err'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#exceptions.shellerr.ShellError" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">exception</span> </em><span class="sig-name descname"><span class="pre">ShellError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">app_str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Err'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#exceptions.shellerr.ShellError" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
 <p>Exception interface for our errors</p>
 <p>Some exceptions that are raised within our shell are expected behaviour.
@@ -280,6 +284,18 @@ an exception is raised.</p>
 </dl>
 </dd></dl>
 
+</dd></dl>
+
+</div>
+<span class="target" id="module-exceptions.syntaxerr"></span><div class="section" id="shell-syntax-error">
+<h2>Shell Syntax Error<a class="headerlink" href="#shell-syntax-error" title="Permalink to this headline">¶</a></h2>
+<p>Error wrapper for lark’s VisitError.
+It is raised whenever the parsing fails.</p>
+<dl class="py exception">
+<dt class="sig sig-object py" id="exceptions.syntaxerr.ShellSyntaxError">
+<em class="property"><span class="pre">exception</span> </em><span class="sig-name descname"><span class="pre">ShellSyntaxError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Wrong</span> <span class="pre">Syntax'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#exceptions.syntaxerr.ShellSyntaxError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#exceptions.shellerr.ShellError" title="exceptions.shellerr.ShellError"><code class="xref py py-class docutils literal notranslate"><span class="pre">exceptions.shellerr.ShellError</span></code></a></p>
+<p>Errors that appears on failed parsing of the input string.</p>
 </dd></dl>
 
 </div>

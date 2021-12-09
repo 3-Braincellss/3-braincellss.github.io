@@ -41,7 +41,7 @@
     
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="prev" title="Shell" href="shell.html" /> 
+    <link rel="prev" title="operations" href="operations.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -112,14 +112,16 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Source Code</span></p>
 <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="shell.html">Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="run.html">Run</a></li>
+<li class="toctree-l1"><a class="reference internal" href="session.html">session</a></li>
 <li class="toctree-l1"><a class="reference internal" href="apps.html">apps</a></li>
 <li class="toctree-l1"><a class="reference internal" href="common.html">common</a></li>
 <li class="toctree-l1"><a class="reference internal" href="exceptions.html">exceptions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="operations.html">operations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="shell.html">Shell</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">shellparser</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#grammar-lark">grammar.lark</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#parser">parser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#parser">Parser</a></li>
 </ul>
 </li>
 </ul>
@@ -222,11 +224,11 @@ WHITESPACE           : /[\s]+/
 </div>
 </div>
 <span class="target" id="module-shellparser.parser"></span><div class="section" id="parser">
-<h2>parser<a class="headerlink" href="#parser" title="Permalink to this headline">¶</a></h2>
+<h2>Parser<a class="headerlink" href="#parser" title="Permalink to this headline">¶</a></h2>
 <p>Module which handles parsing and transforming the parse tree</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="shellparser.parser.ShellTransformer">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ShellTransformer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">visit_tokens</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#shellparser.parser.ShellTransformer" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">ShellTransformer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">visit_tokens</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#shellparser.parser.ShellTransformer" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">lark.visitors.Transformer</span></code></p>
 <p>Custom transformer inheriting lark.visitors.Transformer</p>
 <dl class="py method">
@@ -374,7 +376,8 @@ operation object</p>
 the parse tree</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>args</strong> (<em>list</em>) – A list of a single string of the text inside the quotes</p>
+<dd class="field-odd"><p><strong>args</strong> (<em>list</em>) – A list of a single string of the text inside the
+quotes</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>the string that was in the quotes</p>
@@ -491,6 +494,10 @@ back quotes</p>
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p><a class="reference internal" href="operations.html#operations.operation.Operation" title="operations.operation.Operation">Operation</a></p>
 </dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><a class="reference internal" href="exceptions.html#exceptions.syntaxerr.ShellSyntaxError" title="exceptions.syntaxerr.ShellSyntaxError"><strong>ShellSyntaxError</strong></a> – Raises the syntax error if either
+    parsing or transforming fails.</p>
+</dd>
 </dl>
 </dd></dl>
 
@@ -503,7 +510,7 @@ back quotes</p>
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="shell.html" class="btn btn-neutral float-left" title="Shell" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="operations.html" class="btn btn-neutral float-left" title="operations" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>
