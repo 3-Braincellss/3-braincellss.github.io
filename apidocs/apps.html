@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>apps &mdash; Comp0010 Shell Python P14  documentation</title>
+  <title>Apps &mdash; Comp0010 Shell Python P14  documentation</title>
   
 
   
@@ -41,8 +41,8 @@
     
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="common" href="common.html" />
-    <link rel="prev" title="Program Flow" href="../markdown/development.html" /> 
+    <link rel="next" title="Commands" href="commands.html" />
+    <link rel="prev" title="Prompt" href="prompt.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -87,12 +87,7 @@
               
             
             
-              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../markdown/getting-started.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../markdown/getting-started.html#running">Running</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Documentation</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Documentation</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../markdown/intro.html">COMP0010 Shell</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../markdown/language.html">Language</a></li>
@@ -111,13 +106,18 @@
 <li class="toctree-l1"><a class="reference internal" href="../markdown/development.html#testing">Testing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../markdown/development.html#code-style">Code style</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Source Code</span></p>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">apps</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="shell.html">Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="parser.html">Parser</a></li>
+<li class="toctree-l1"><a class="reference internal" href="run.html">Run</a></li>
+<li class="toctree-l1"><a class="reference internal" href="prompt.html">Prompt</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Apps</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#app">app</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#app-factory">app_factory</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#cat">cat</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#cd">cd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#clear">clear</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#cut">cut</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#echo">echo</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#find">find</a></li>
@@ -131,11 +131,9 @@
 <li class="toctree-l2"><a class="reference internal" href="#unsafe">unsafe</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="common.html">common</a></li>
-<li class="toctree-l1"><a class="reference internal" href="exceptions.html">exceptions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="operations.html">operations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="shell.html">Shell</a></li>
-<li class="toctree-l1"><a class="reference internal" href="shellparser.html">shellparser</a></li>
+<li class="toctree-l1"><a class="reference internal" href="commands.html">Commands</a></li>
+<li class="toctree-l1"><a class="reference internal" href="exceptions.html">Exceptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="common.html">Common</a></li>
 </ul>
 
             
@@ -184,7 +182,7 @@
     
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>apps</li>
+      <li>Apps</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -204,8 +202,11 @@
            <div itemprop="articleBody">
             
   <div class="section" id="module-apps">
-<span id="apps"></span><h1>apps<a class="headerlink" href="#module-apps" title="Permalink to this headline">¶</a></h1>
-<p>text from apps/__init__.py</p>
+<span id="apps"></span><h1>Apps<a class="headerlink" href="#module-apps" title="Permalink to this headline">¶</a></h1>
+<p>Apps Module.</p>
+<p>Contains all concrete apps, abstract
+app interface, app factory and an unsafe
+decorator</p>
 <span class="target" id="module-apps.app"></span><div class="section" id="app">
 <h2>app<a class="headerlink" href="#app" title="Permalink to this headline">¶</a></h2>
 <p>This module provides an interface for an App.</p>
@@ -263,7 +264,7 @@ execution.</p>
 <p>A class used to create app objects</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="apps.app_factory.AppFactory.apps">
-<span class="sig-name descname"><span class="pre">apps</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'cat':</span> <span class="pre">&lt;class</span> <span class="pre">'apps.cat.CatApp'&gt;,</span> <span class="pre">'cd':</span> <span class="pre">&lt;class</span> <span class="pre">'apps.cd.CdApp'&gt;,</span> <span class="pre">'cut':</span> <span class="pre">&lt;class</span> <span class="pre">'apps.cut.CutApp'&gt;,</span> <span class="pre">'echo':</span> <span class="pre">&lt;class</span> <span class="pre">'apps.echo.EchoApp'&gt;,</span> <span class="pre">'find':</span> <span class="pre">&lt;class</span> <span class="pre">'apps.find.FindApp'&gt;,</span> <span class="pre">'grep':</span> <span class="pre">&lt;class</span> <span class="pre">'apps.grep.GrepApp'&gt;,</span> <span class="pre">'head':</span> <span class="pre">&lt;class</span> <span class="pre">'apps.head.HeadApp'&gt;,</span> <span class="pre">'ls':</span> <span class="pre">&lt;class</span> <span class="pre">'apps.ls.LsApp'&gt;,</span> <span class="pre">'pwd':</span> <span class="pre">&lt;class</span> <span class="pre">'apps.pwd.PwdApp'&gt;,</span> <span class="pre">'sort':</span> <span class="pre">&lt;class</span> <span class="pre">'apps.sort.SortApp'&gt;,</span> <span class="pre">'tail':</span> <span class="pre">&lt;class</span> <span class="pre">'apps.tail.TailApp'&gt;,</span> <span class="pre">'uniq':</span> <span class="pre">&lt;class</span> <span class="pre">'apps.uniq.UniqApp'&gt;}</span></em><a class="headerlink" href="#apps.app_factory.AppFactory.apps" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">apps</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'cat':</span> <span class="pre">&lt;class</span> <span class="pre">'apps.cat.CatApp'&gt;,</span> <span class="pre">'cd':</span> <span class="pre">&lt;class</span> <span class="pre">'apps.cd.CdApp'&gt;,</span> <span class="pre">'clear':</span> <span class="pre">&lt;class</span> <span class="pre">'apps.clear.ClearApp'&gt;,</span> <span class="pre">'cut':</span> <span class="pre">&lt;class</span> <span class="pre">'apps.cut.CutApp'&gt;,</span> <span class="pre">'echo':</span> <span class="pre">&lt;class</span> <span class="pre">'apps.echo.EchoApp'&gt;,</span> <span class="pre">'find':</span> <span class="pre">&lt;class</span> <span class="pre">'apps.find.FindApp'&gt;,</span> <span class="pre">'grep':</span> <span class="pre">&lt;class</span> <span class="pre">'apps.grep.GrepApp'&gt;,</span> <span class="pre">'head':</span> <span class="pre">&lt;class</span> <span class="pre">'apps.head.HeadApp'&gt;,</span> <span class="pre">'ls':</span> <span class="pre">&lt;class</span> <span class="pre">'apps.ls.LsApp'&gt;,</span> <span class="pre">'mkdir':</span> <span class="pre">&lt;class</span> <span class="pre">'apps.mkdir.MkdirApp'&gt;,</span> <span class="pre">'pwd':</span> <span class="pre">&lt;class</span> <span class="pre">'apps.pwd.PwdApp'&gt;,</span> <span class="pre">'sort':</span> <span class="pre">&lt;class</span> <span class="pre">'apps.sort.SortApp'&gt;,</span> <span class="pre">'tail':</span> <span class="pre">&lt;class</span> <span class="pre">'apps.tail.TailApp'&gt;,</span> <span class="pre">'uniq':</span> <span class="pre">&lt;class</span> <span class="pre">'apps.uniq.UniqApp'&gt;}</span></em><a class="headerlink" href="#apps.app_factory.AppFactory.apps" title="Permalink to this definition">¶</a></dt>
 <dd><p>A dictionary that maps app names to their classes</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
@@ -427,6 +428,36 @@ the given path exists.</p>
 </dd></dl>
 
 </div>
+<span class="target" id="module-apps.clear"></span><div class="section" id="clear">
+<h2>clear<a class="headerlink" href="#clear" title="Permalink to this headline">¶</a></h2>
+<p>Module representing the clear application.</p>
+<p>Usage in shell: <code class="docutils literal notranslate"><span class="pre">clear</span></code></p>
+<dl class="py class">
+<dt class="sig sig-object py" id="apps.clear.ClearApp">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ClearApp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#apps.clear.ClearApp" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#apps.app.App" title="apps.app.App"><code class="xref py py-class docutils literal notranslate"><span class="pre">apps.app.App</span></code></a></p>
+<p>A class representing the clear application</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>args</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">list</span></code>) – Contains all the arguments and options of
+the instruction.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="apps.clear.ClearApp.run">
+<span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inp</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#apps.clear.ClearApp.run" title="Permalink to this definition">¶</a></dt>
+<dd><p>Clears the terminal</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="apps.clear.ClearApp.validate_args">
+<span class="sig-name descname"><span class="pre">validate_args</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#apps.clear.ClearApp.validate_args" title="Permalink to this definition">¶</a></dt>
+<dd><p>clear is not expecting any arguments</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
 <span class="target" id="module-apps.cut"></span><div class="section" id="cut">
 <h2>cut<a class="headerlink" href="#cut" title="Permalink to this headline">¶</a></h2>
 <p>Module representing the cut application
@@ -571,15 +602,13 @@ only used for piping and redirects.</p></li>
 the result of execution.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>The output deque will contain each of the files that
+</dl>
+<p>Returns:
+<code class="docutils literal notranslate"><span class="pre">deque</span></code>: The output deque will contain each of the files that
 matched the specified pattern</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">deque</span></code></p>
-</dd>
-<dt class="field-even">Raises</dt>
-<dd class="field-even"><p><a class="reference internal" href="exceptions.html#exceptions.runerr.RunError" title="exceptions.runerr.RunError"><strong>RunError</strong></a> – If the root path supplied does not exist.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><a class="reference internal" href="exceptions.html#exceptions.runerr.RunError" title="exceptions.runerr.RunError"><strong>RunError</strong></a> – If the root path supplied does not exist.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -708,7 +737,12 @@ the result of execution.</p></li>
 <dl class="py method">
 <dt class="sig sig-object py" id="apps.head.HeadApp.validate_args">
 <span class="sig-name descname"><span class="pre">validate_args</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#apps.head.HeadApp.validate_args" title="Permalink to this definition">¶</a></dt>
-<dd><p>No args need to be checked for this application.</p>
+<dd><p>Ensures the options are valid.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><a class="reference internal" href="exceptions.html#exceptions.contexterr.ContextError" title="exceptions.contexterr.ContextError"><strong>ContextError</strong></a> – </p>
+</dd>
+</dl>
 </dd></dl>
 
 </dd></dl>
@@ -939,7 +973,12 @@ the result of execution.</p></li>
 <dl class="py method">
 <dt class="sig sig-object py" id="apps.tail.TailApp.validate_args">
 <span class="sig-name descname"><span class="pre">validate_args</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#apps.tail.TailApp.validate_args" title="Permalink to this definition">¶</a></dt>
-<dd><p>No args need to be checked for this application.</p>
+<dd><p>Ensures the options are valid.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><a class="reference internal" href="exceptions.html#exceptions.contexterr.ContextError" title="exceptions.contexterr.ContextError"><strong>ContextError</strong></a> – </p>
+</dd>
+</dl>
 </dd></dl>
 
 </dd></dl>
@@ -1039,8 +1078,8 @@ is added to the deque like normal.</p>
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="common.html" class="btn btn-neutral float-right" title="common" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="../markdown/development.html" class="btn btn-neutral float-left" title="Program Flow" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="commands.html" class="btn btn-neutral float-right" title="Commands" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="prompt.html" class="btn btn-neutral float-left" title="Prompt" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>

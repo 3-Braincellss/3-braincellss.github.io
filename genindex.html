@@ -85,12 +85,7 @@
               
             
             
-              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="markdown/getting-started.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="markdown/getting-started.html#running">Running</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Documentation</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Documentation</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="markdown/intro.html">COMP0010 Shell</a></li>
 <li class="toctree-l1"><a class="reference internal" href="markdown/language.html">Language</a></li>
@@ -109,14 +104,16 @@
 <li class="toctree-l1"><a class="reference internal" href="markdown/development.html#testing">Testing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="markdown/development.html#code-style">Code style</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Source Code</span></p>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="apidocs/apps.html">apps</a></li>
-<li class="toctree-l1"><a class="reference internal" href="apidocs/common.html">common</a></li>
-<li class="toctree-l1"><a class="reference internal" href="apidocs/exceptions.html">exceptions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="apidocs/operations.html">operations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="apidocs/shell.html">Shell</a></li>
-<li class="toctree-l1"><a class="reference internal" href="apidocs/shellparser.html">shellparser</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apidocs/parser.html">Parser</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apidocs/run.html">Run</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apidocs/prompt.html">Prompt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apidocs/apps.html">Apps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apidocs/commands.html">Commands</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apidocs/exceptions.html">Exceptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apidocs/common.html">Common</a></li>
 </ul>
 
             
@@ -211,7 +208,7 @@
 <h2 id="A">A</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="apidocs/operations.html#operations.call.Call.app">app (Call attribute)</a>
+      <li><a href="apidocs/commands.html#commands.call.Call.app">app (Call attribute)</a>
 </li>
       <li><a href="apidocs/apps.html#apps.app.App">App (class in apps.app)</a>
 </li>
@@ -256,6 +253,13 @@
 
       <ul>
         <li><a href="apidocs/apps.html#module-apps.cd">module</a>
+</li>
+      </ul></li>
+      <li>
+    apps.clear
+
+      <ul>
+        <li><a href="apidocs/apps.html#module-apps.clear">module</a>
 </li>
       </ul></li>
       <li>
@@ -337,38 +341,110 @@
         <li><a href="apidocs/apps.html#module-apps.unsafe">module</a>
 </li>
       </ul></li>
-      <li><a href="apidocs/shellparser.html#shellparser.parser.ShellTransformer.arguments">arguments() (ShellTransformer method)</a>
+      <li><a href="apidocs/parser.html#parser.command_transformer.CommandTransformer.arguments">arguments() (CommandTransformer method)</a>
+
+      <ul>
+        <li><a href="apidocs/parser.html#parser.highlight_transformer.HighlightTransformer.arguments">(HighlightTransformer method)</a>
 </li>
+      </ul></li>
   </ul></td>
 </tr></table>
 
 <h2 id="B">B</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="apidocs/shellparser.html#shellparser.parser.ShellTransformer.back_quoted">back_quoted() (ShellTransformer method)</a>
+      <li><a href="apidocs/parser.html#parser.command_transformer.CommandTransformer.back_quoted">back_quoted() (CommandTransformer method)</a>
+
+      <ul>
+        <li><a href="apidocs/parser.html#parser.highlight_transformer.HighlightTransformer.back_quoted">(HighlightTransformer method)</a>
 </li>
+      </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="apidocs/shellparser.html#shellparser.parser.ShellTransformer.BACKQUOTED">BACKQUOTED (ShellTransformer attribute)</a>
+      <li><a href="apidocs/parser.html#parser.command_transformer.CommandTransformer.BACKQUOTED">BACKQUOTED (CommandTransformer attribute)</a>
+
+      <ul>
+        <li><a href="apidocs/parser.html#parser.highlight_transformer.HighlightTransformer.BACKQUOTED">(HighlightTransformer attribute)</a>
 </li>
+      </ul></li>
   </ul></td>
 </tr></table>
 
 <h2 id="C">C</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="apidocs/operations.html#operations.call.Call">Call (class in operations.call)</a>
+      <li><a href="apidocs/commands.html#commands.call.Call">Call (class in commands.call)</a>
 </li>
-      <li><a href="apidocs/shellparser.html#shellparser.parser.ShellTransformer.call">call() (ShellTransformer method)</a>
+      <li><a href="apidocs/parser.html#parser.command_transformer.CommandTransformer.call">call() (CommandTransformer method)</a>
+
+      <ul>
+        <li><a href="apidocs/parser.html#parser.highlight_transformer.HighlightTransformer.call">(HighlightTransformer method)</a>
 </li>
+      </ul></li>
       <li><a href="apidocs/apps.html#apps.cat.CatApp">CatApp (class in apps.cat)</a>
 </li>
       <li><a href="apidocs/apps.html#apps.cd.CdApp">CdApp (class in apps.cd)</a>
 </li>
-      <li><a href="apidocs/shellparser.html#shellparser.parser.ShellTransformer.command">command() (ShellTransformer method)</a>
+      <li><a href="apidocs/apps.html#apps.clear.ClearApp">ClearApp (class in apps.clear)</a>
 </li>
+      <li><a href="apidocs/commands.html#commands.command.Command">Command (class in commands.command)</a>
+</li>
+      <li><a href="apidocs/parser.html#parser.command_transformer.CommandTransformer.command">command() (CommandTransformer method)</a>
+
+      <ul>
+        <li><a href="apidocs/parser.html#parser.highlight_transformer.HighlightTransformer.command">(HighlightTransformer method)</a>
+</li>
+      </ul></li>
+      <li><a href="apidocs/commands.html#commands.command_factory.CommandFactory">CommandFactory (class in commands.command_factory)</a>
+</li>
+      <li>
+    commands
+
+      <ul>
+        <li><a href="apidocs/commands.html#module-commands">module</a>
+</li>
+      </ul></li>
+      <li><a href="apidocs/commands.html#commands.command_factory.CommandFactory.commands">commands (CommandFactory attribute)</a>
+</li>
+      <li>
+    commands.call
+
+      <ul>
+        <li><a href="apidocs/commands.html#module-commands.call">module</a>
+</li>
+      </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li>
+    commands.command
+
+      <ul>
+        <li><a href="apidocs/commands.html#module-commands.command">module</a>
+</li>
+      </ul></li>
+      <li>
+    commands.command_factory
+
+      <ul>
+        <li><a href="apidocs/commands.html#module-commands.command_factory">module</a>
+</li>
+      </ul></li>
+      <li>
+    commands.pipe
+
+      <ul>
+        <li><a href="apidocs/commands.html#module-commands.pipe">module</a>
+</li>
+      </ul></li>
+      <li>
+    commands.sequence
+
+      <ul>
+        <li><a href="apidocs/commands.html#module-commands.sequence">module</a>
+</li>
+      </ul></li>
+      <li><a href="apidocs/parser.html#parser.command_transformer.CommandTransformer">CommandTransformer (class in parser.command_transformer)</a>
+</li>
       <li>
     common
 
@@ -393,12 +469,20 @@
 <h2 id="D">D</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="apidocs/shellparser.html#shellparser.parser.ShellTransformer.DOUBLE_QUOTE_CONTENT">DOUBLE_QUOTE_CONTENT (ShellTransformer attribute)</a>
+      <li><a href="apidocs/parser.html#parser.command_transformer.CommandTransformer.DOUBLE_QUOTE_CONTENT">DOUBLE_QUOTE_CONTENT (CommandTransformer attribute)</a>
+
+      <ul>
+        <li><a href="apidocs/parser.html#parser.highlight_transformer.HighlightTransformer.DOUBLE_QUOTE_CONTENT">(HighlightTransformer attribute)</a>
 </li>
+      </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="apidocs/shellparser.html#shellparser.parser.ShellTransformer.double_quoted">double_quoted() (ShellTransformer method)</a>
+      <li><a href="apidocs/parser.html#parser.command_transformer.CommandTransformer.double_quoted">double_quoted() (CommandTransformer method)</a>
+
+      <ul>
+        <li><a href="apidocs/parser.html#parser.highlight_transformer.HighlightTransformer.double_quoted">(HighlightTransformer method)</a>
 </li>
+      </ul></li>
   </ul></td>
 </tr></table>
 
@@ -444,7 +528,14 @@
         <li><a href="apidocs/exceptions.html#module-exceptions.shellerr">module</a>
 </li>
       </ul></li>
-      <li><a href="apidocs/shell.html#shell.Shell.execute">execute() (Shell static method)</a>
+      <li>
+    exceptions.syntaxerr
+
+      <ul>
+        <li><a href="apidocs/exceptions.html#module-exceptions.syntaxerr">module</a>
+</li>
+      </ul></li>
+      <li><a href="apidocs/shell.html#shell.Shell.execute">execute() (Shell method)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -462,9 +553,11 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="apidocs/apps.html#apps.app_factory.AppFactory.get_app">get_app() (AppFactory static method)</a>
 </li>
+      <li><a href="apidocs/commands.html#commands.command_factory.CommandFactory.get_command">get_command() (CommandFactory class method)</a>
+</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="apidocs/operations.html#operations.operation_factory.OperationFactory.get_operation">get_operation() (OperationFactory class method)</a>
+      <li><a href="apidocs/prompt.html#prompt.completer.ShellPathCompleter.get_completions">get_completions() (ShellPathCompleter method)</a>
 </li>
       <li><a href="apidocs/apps.html#apps.grep.GrepApp">GrepApp (class in apps.grep)</a>
 </li>
@@ -477,16 +570,24 @@
       <li><a href="apidocs/apps.html#apps.head.HeadApp">HeadApp (class in apps.head)</a>
 </li>
   </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="apidocs/parser.html#parser.highlight_transformer.HighlightTransformer">HighlightTransformer (class in parser.highlight_transformer)</a>
+</li>
+  </ul></td>
 </tr></table>
 
 <h2 id="L">L</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="apidocs/shellparser.html#shellparser.parser.ShellTransformer.l_redirection">l_redirection() (ShellTransformer method)</a>
+      <li><a href="apidocs/parser.html#parser.command_transformer.CommandTransformer.l_redirection">l_redirection() (CommandTransformer method)</a>
+
+      <ul>
+        <li><a href="apidocs/parser.html#parser.highlight_transformer.HighlightTransformer.l_redirection">(HighlightTransformer method)</a>
 </li>
+      </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="apidocs/operations.html#operations.call.Call.left_red">left_red (Call attribute)</a>
+      <li><a href="apidocs/commands.html#commands.call.Call.left_red">left_red (Call attribute)</a>
 </li>
       <li><a href="apidocs/apps.html#apps.ls.LsApp">LsApp (class in apps.ls)</a>
 </li>
@@ -512,6 +613,8 @@
 </li>
         <li><a href="apidocs/apps.html#module-apps.cd">apps.cd</a>
 </li>
+        <li><a href="apidocs/apps.html#module-apps.clear">apps.clear</a>
+</li>
         <li><a href="apidocs/apps.html#module-apps.cut">apps.cut</a>
 </li>
         <li><a href="apidocs/apps.html#module-apps.echo">apps.echo</a>
@@ -534,6 +637,18 @@
 </li>
         <li><a href="apidocs/apps.html#module-apps.unsafe">apps.unsafe</a>
 </li>
+        <li><a href="apidocs/commands.html#module-commands">commands</a>
+</li>
+        <li><a href="apidocs/commands.html#module-commands.call">commands.call</a>
+</li>
+        <li><a href="apidocs/commands.html#module-commands.command">commands.command</a>
+</li>
+        <li><a href="apidocs/commands.html#module-commands.command_factory">commands.command_factory</a>
+</li>
+        <li><a href="apidocs/commands.html#module-commands.pipe">commands.pipe</a>
+</li>
+        <li><a href="apidocs/commands.html#module-commands.sequence">commands.sequence</a>
+</li>
         <li><a href="apidocs/common.html#module-common">common</a>
 </li>
         <li><a href="apidocs/common.html#module-common.tools">common.tools</a>
@@ -548,23 +663,27 @@
 </li>
         <li><a href="apidocs/exceptions.html#module-exceptions.shellerr">exceptions.shellerr</a>
 </li>
-        <li><a href="apidocs/operations.html#module-operations">operations</a>
+        <li><a href="apidocs/exceptions.html#module-exceptions.syntaxerr">exceptions.syntaxerr</a>
 </li>
-        <li><a href="apidocs/operations.html#module-operations.call">operations.call</a>
+        <li><a href="apidocs/parser.html#module-parser">parser</a>
 </li>
-        <li><a href="apidocs/operations.html#module-operations.operation">operations.operation</a>
+        <li><a href="apidocs/parser.html#module-parser.command_transformer">parser.command_transformer</a>
 </li>
-        <li><a href="apidocs/operations.html#module-operations.operation_factory">operations.operation_factory</a>
+        <li><a href="apidocs/parser.html#module-parser.highlight_transformer">parser.highlight_transformer</a>
 </li>
-        <li><a href="apidocs/operations.html#module-operations.pipe">operations.pipe</a>
+        <li><a href="apidocs/parser.html#module-parser.parser">parser.parser</a>
 </li>
-        <li><a href="apidocs/operations.html#module-operations.sequence">operations.sequence</a>
+        <li><a href="apidocs/prompt.html#module-prompt">prompt</a>
+</li>
+        <li><a href="apidocs/prompt.html#module-prompt.completer">prompt.completer</a>
+</li>
+        <li><a href="apidocs/prompt.html#module-prompt.conf">prompt.conf</a>
+</li>
+        <li><a href="apidocs/prompt.html#module-prompt.shellsession">prompt.shellsession</a>
+</li>
+        <li><a href="apidocs/run.html#module-run">run</a>
 </li>
         <li><a href="apidocs/shell.html#module-shell">shell</a>
-</li>
-        <li><a href="apidocs/shellparser.html#module-shellparser">shellparser</a>
-</li>
-        <li><a href="apidocs/shellparser.html#module-shellparser.parser">shellparser.parser</a>
 </li>
       </ul></li>
   </ul></td>
@@ -581,66 +700,18 @@
 <h2 id="O">O</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="apidocs/operations.html#operations.pipe.Pipe.op1">op1 (Pipe attribute)</a>
+      <li><a href="apidocs/commands.html#commands.pipe.Pipe.op1">op1 (Pipe attribute)</a>
 
       <ul>
-        <li><a href="apidocs/operations.html#operations.sequence.Sequence.op1">(Sequence attribute)</a>
+        <li><a href="apidocs/commands.html#commands.sequence.Sequence.op1">(Sequence attribute)</a>
 </li>
       </ul></li>
-      <li><a href="apidocs/operations.html#operations.pipe.Pipe.op2">op2 (Pipe attribute)</a>
-
-      <ul>
-        <li><a href="apidocs/operations.html#operations.sequence.Sequence.op2">(Sequence attribute)</a>
-</li>
-      </ul></li>
-      <li><a href="apidocs/operations.html#operations.operation.Operation">Operation (class in operations.operation)</a>
-</li>
-      <li><a href="apidocs/operations.html#operations.operation_factory.OperationFactory">OperationFactory (class in operations.operation_factory)</a>
-</li>
-      <li>
-    operations
-
-      <ul>
-        <li><a href="apidocs/operations.html#module-operations">module</a>
-</li>
-      </ul></li>
-      <li><a href="apidocs/operations.html#operations.operation_factory.OperationFactory.operations">operations (OperationFactory attribute)</a>
-</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li>
-    operations.call
+      <li><a href="apidocs/commands.html#commands.pipe.Pipe.op2">op2 (Pipe attribute)</a>
 
       <ul>
-        <li><a href="apidocs/operations.html#module-operations.call">module</a>
-</li>
-      </ul></li>
-      <li>
-    operations.operation
-
-      <ul>
-        <li><a href="apidocs/operations.html#module-operations.operation">module</a>
-</li>
-      </ul></li>
-      <li>
-    operations.operation_factory
-
-      <ul>
-        <li><a href="apidocs/operations.html#module-operations.operation_factory">module</a>
-</li>
-      </ul></li>
-      <li>
-    operations.pipe
-
-      <ul>
-        <li><a href="apidocs/operations.html#module-operations.pipe">module</a>
-</li>
-      </ul></li>
-      <li>
-    operations.sequence
-
-      <ul>
-        <li><a href="apidocs/operations.html#module-operations.sequence">module</a>
+        <li><a href="apidocs/commands.html#commands.sequence.Sequence.op2">(Sequence attribute)</a>
 </li>
       </ul></li>
   </ul></td>
@@ -649,16 +720,76 @@
 <h2 id="P">P</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="apidocs/operations.html#operations.pipe.Pipe">Pipe (class in operations.pipe)</a>
+      <li><a href="apidocs/parser.html#parser.parser.ShellParser.parse">parse() (ShellParser method)</a>
 </li>
-      <li><a href="apidocs/shellparser.html#shellparser.parser.ShellTransformer.pipe">pipe() (ShellTransformer method)</a>
+      <li>
+    parser
+
+      <ul>
+        <li><a href="apidocs/parser.html#module-parser">module</a>
 </li>
+      </ul></li>
+      <li>
+    parser.command_transformer
+
+      <ul>
+        <li><a href="apidocs/parser.html#module-parser.command_transformer">module</a>
+</li>
+      </ul></li>
+      <li>
+    parser.highlight_transformer
+
+      <ul>
+        <li><a href="apidocs/parser.html#module-parser.highlight_transformer">module</a>
+</li>
+      </ul></li>
+      <li>
+    parser.parser
+
+      <ul>
+        <li><a href="apidocs/parser.html#module-parser.parser">module</a>
+</li>
+      </ul></li>
+      <li><a href="apidocs/commands.html#commands.pipe.Pipe">Pipe (class in commands.pipe)</a>
+</li>
+      <li><a href="apidocs/parser.html#parser.command_transformer.CommandTransformer.pipe">pipe() (CommandTransformer method)</a>
+
+      <ul>
+        <li><a href="apidocs/parser.html#parser.highlight_transformer.HighlightTransformer.pipe">(HighlightTransformer method)</a>
+</li>
+      </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="apidocs/shell.html#shell.Shell.PREFIX">PREFIX (Shell attribute)</a>
-</li>
       <li><a href="apidocs/common.html#common.tools.prettify_path">prettify_path() (in module common.tools)</a>
 </li>
+      <li>
+    prompt
+
+      <ul>
+        <li><a href="apidocs/prompt.html#module-prompt">module</a>
+</li>
+      </ul></li>
+      <li>
+    prompt.completer
+
+      <ul>
+        <li><a href="apidocs/prompt.html#module-prompt.completer">module</a>
+</li>
+      </ul></li>
+      <li>
+    prompt.conf
+
+      <ul>
+        <li><a href="apidocs/prompt.html#module-prompt.conf">module</a>
+</li>
+      </ul></li>
+      <li>
+    prompt.shellsession
+
+      <ul>
+        <li><a href="apidocs/prompt.html#module-prompt.shellsession">module</a>
+</li>
+      </ul></li>
       <li><a href="apidocs/apps.html#apps.pwd.PwdApp">PwdApp (class in apps.pwd)</a>
 </li>
   </ul></td>
@@ -667,32 +798,55 @@
 <h2 id="Q">Q</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="apidocs/shellparser.html#shellparser.parser.ShellTransformer.quoted">quoted() (ShellTransformer method)</a>
+      <li><a href="apidocs/parser.html#parser.command_transformer.CommandTransformer.quoted">quoted() (CommandTransformer method)</a>
+
+      <ul>
+        <li><a href="apidocs/parser.html#parser.highlight_transformer.HighlightTransformer.quoted">(HighlightTransformer method)</a>
 </li>
+      </ul></li>
   </ul></td>
 </tr></table>
 
 <h2 id="R">R</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="apidocs/shellparser.html#shellparser.parser.ShellTransformer.r_redirection">r_redirection() (ShellTransformer method)</a>
+      <li><a href="apidocs/parser.html#parser.command_transformer.CommandTransformer.r_redirection">r_redirection() (CommandTransformer method)</a>
+
+      <ul>
+        <li><a href="apidocs/parser.html#parser.highlight_transformer.HighlightTransformer.r_redirection">(HighlightTransformer method)</a>
 </li>
+      </ul></li>
       <li><a href="apidocs/common.html#common.tools.read_from_file">read_from_file() (in module common.tools)</a>
 </li>
       <li><a href="apidocs/common.html#common.tools.read_lines_from_file">read_lines_from_file() (in module common.tools)</a>
 </li>
-      <li><a href="apidocs/shellparser.html#shellparser.parser.ShellTransformer.redirection">redirection() (ShellTransformer method)</a>
+      <li><a href="apidocs/parser.html#parser.command_transformer.CommandTransformer.redirection">redirection() (CommandTransformer method)</a>
+
+      <ul>
+        <li><a href="apidocs/parser.html#parser.highlight_transformer.HighlightTransformer.redirection">(HighlightTransformer method)</a>
 </li>
-      <li><a href="apidocs/operations.html#operations.call.Call.right_red">right_red (Call attribute)</a>
+      </ul></li>
+      <li><a href="apidocs/commands.html#commands.call.Call.right_red">right_red (Call attribute)</a>
 </li>
+      <li>
+    run
+
+      <ul>
+        <li><a href="apidocs/run.html#module-run">module</a>
+</li>
+      </ul></li>
       <li><a href="apidocs/apps.html#apps.app.App.run">run() (App method)</a>
 
       <ul>
-        <li><a href="apidocs/operations.html#operations.call.Call.run">(Call method)</a>
+        <li><a href="apidocs/commands.html#commands.call.Call.run">(Call method)</a>
 </li>
         <li><a href="apidocs/apps.html#apps.cat.CatApp.run">(CatApp method)</a>
 </li>
         <li><a href="apidocs/apps.html#apps.cd.CdApp.run">(CdApp method)</a>
+</li>
+        <li><a href="apidocs/apps.html#apps.clear.ClearApp.run">(ClearApp method)</a>
+</li>
+        <li><a href="apidocs/commands.html#commands.command.Command.run">(Command method)</a>
 </li>
         <li><a href="apidocs/apps.html#apps.cut.CutApp.run">(CutApp method)</a>
 </li>
@@ -706,15 +860,13 @@
 </li>
         <li><a href="apidocs/apps.html#apps.ls.LsApp.run">(LsApp method)</a>
 </li>
-        <li><a href="apidocs/operations.html#operations.operation.Operation.run">(Operation method)</a>
-</li>
-        <li><a href="apidocs/operations.html#operations.pipe.Pipe.run">(Pipe method)</a>
+        <li><a href="apidocs/commands.html#commands.pipe.Pipe.run">(Pipe method)</a>
 </li>
         <li><a href="apidocs/apps.html#apps.pwd.PwdApp.run">(PwdApp method)</a>
 </li>
-        <li><a href="apidocs/operations.html#operations.sequence.Sequence.run">(Sequence method)</a>
+        <li><a href="apidocs/commands.html#commands.sequence.Sequence.run">(Sequence method)</a>
 </li>
-        <li><a href="apidocs/shell.html#shell.Shell.run">(Shell method)</a>
+        <li><a href="apidocs/prompt.html#prompt.shellsession.ShellSession.run">(ShellSession method)</a>
 </li>
         <li><a href="apidocs/apps.html#apps.sort.SortApp.run">(SortApp method)</a>
 </li>
@@ -727,8 +879,6 @@
       </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="apidocs/shellparser.html#shellparser.parser.run_parser">run_parser() (in module shellparser.parser)</a>
-</li>
       <li><a href="apidocs/exceptions.html#exceptions.runerr.RunError">RunError</a>
 </li>
   </ul></td>
@@ -737,9 +887,13 @@
 <h2 id="S">S</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="apidocs/shellparser.html#shellparser.parser.ShellTransformer.seq">seq() (ShellTransformer method)</a>
+      <li><a href="apidocs/parser.html#parser.command_transformer.CommandTransformer.seq">seq() (CommandTransformer method)</a>
+
+      <ul>
+        <li><a href="apidocs/parser.html#parser.highlight_transformer.HighlightTransformer.seq">(HighlightTransformer method)</a>
 </li>
-      <li><a href="apidocs/operations.html#operations.sequence.Sequence">Sequence (class in operations.sequence)</a>
+      </ul></li>
+      <li><a href="apidocs/commands.html#commands.sequence.Sequence">Sequence (class in commands.sequence)</a>
 </li>
       <li>
     shell
@@ -752,30 +906,30 @@
 </li>
       <li><a href="apidocs/exceptions.html#exceptions.shellerr.ShellError">ShellError</a>
 </li>
-      <li>
-    shellparser
-
-      <ul>
-        <li><a href="apidocs/shellparser.html#module-shellparser">module</a>
+      <li><a href="apidocs/parser.html#parser.parser.ShellParser">ShellParser (class in parser.parser)</a>
 </li>
-      </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li>
-    shellparser.parser
-
-      <ul>
-        <li><a href="apidocs/shellparser.html#module-shellparser.parser">module</a>
+      <li><a href="apidocs/prompt.html#prompt.completer.ShellPathCompleter">ShellPathCompleter (class in prompt.completer)</a>
 </li>
-      </ul></li>
-      <li><a href="apidocs/shellparser.html#shellparser.parser.ShellTransformer">ShellTransformer (class in shellparser.parser)</a>
+      <li><a href="apidocs/prompt.html#prompt.shellsession.ShellSession">ShellSession (class in prompt.shellsession)</a>
+</li>
+      <li><a href="apidocs/exceptions.html#exceptions.syntaxerr.ShellSyntaxError">ShellSyntaxError</a>
 </li>
       <li><a href="apidocs/common.html#common.tools.simple_globbing">simple_globbing() (in module common.tools)</a>
 </li>
-      <li><a href="apidocs/shellparser.html#shellparser.parser.ShellTransformer.SINGLE_QUOTE_CONTENT">SINGLE_QUOTE_CONTENT (ShellTransformer attribute)</a>
+      <li><a href="apidocs/parser.html#parser.command_transformer.CommandTransformer.SINGLE_QUOTE_CONTENT">SINGLE_QUOTE_CONTENT (CommandTransformer attribute)</a>
+
+      <ul>
+        <li><a href="apidocs/parser.html#parser.highlight_transformer.HighlightTransformer.SINGLE_QUOTE_CONTENT">(HighlightTransformer attribute)</a>
 </li>
-      <li><a href="apidocs/shellparser.html#shellparser.parser.ShellTransformer.single_quoted">single_quoted() (ShellTransformer method)</a>
+      </ul></li>
+      <li><a href="apidocs/parser.html#parser.command_transformer.CommandTransformer.single_quoted">single_quoted() (CommandTransformer method)</a>
+
+      <ul>
+        <li><a href="apidocs/parser.html#parser.highlight_transformer.HighlightTransformer.single_quoted">(HighlightTransformer method)</a>
 </li>
+      </ul></li>
       <li><a href="apidocs/apps.html#apps.sort.SortApp">SortApp (class in apps.sort)</a>
 </li>
   </ul></td>
@@ -787,6 +941,14 @@
       <li><a href="apidocs/apps.html#apps.tail.TailApp">TailApp (class in apps.tail)</a>
 </li>
   </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="apidocs/parser.html#parser.command_transformer.CommandTransformer.transform">transform() (CommandTransformer method)</a>
+
+      <ul>
+        <li><a href="apidocs/parser.html#parser.highlight_transformer.HighlightTransformer.transform">(HighlightTransformer method)</a>
+</li>
+      </ul></li>
+  </ul></td>
 </tr></table>
 
 <h2 id="U">U</h2>
@@ -794,9 +956,11 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="apidocs/apps.html#apps.uniq.UniqApp">UniqApp (class in apps.uniq)</a>
 </li>
+      <li><a href="apidocs/parser.html#parser.command_transformer.CommandTransformer.UNQUOTED">UNQUOTED (CommandTransformer attribute)</a>
+</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="apidocs/shellparser.html#shellparser.parser.ShellTransformer.UNQUOTED">UNQUOTED (ShellTransformer attribute)</a>
+      <li><a href="apidocs/parser.html#parser.highlight_transformer.HighlightTransformer.UNQUOTED">UNQUOTED() (HighlightTransformer method)</a>
 </li>
       <li><a href="apidocs/apps.html#apps.unsafe.UnsafeApp">UnsafeApp (class in apps.unsafe)</a>
 </li>
@@ -812,6 +976,8 @@
         <li><a href="apidocs/apps.html#apps.cat.CatApp.validate_args">(CatApp method)</a>
 </li>
         <li><a href="apidocs/apps.html#apps.cd.CdApp.validate_args">(CdApp method)</a>
+</li>
+        <li><a href="apidocs/apps.html#apps.clear.ClearApp.validate_args">(ClearApp method)</a>
 </li>
         <li><a href="apidocs/apps.html#apps.cut.CutApp.validate_args">(CutApp method)</a>
 </li>
@@ -837,25 +1003,17 @@
 </li>
       </ul></li>
   </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="apidocs/operations.html#operations.call.Call.validate_context">validate_context() (Call method)</a>
-
-      <ul>
-        <li><a href="apidocs/operations.html#operations.operation.Operation.validate_context">(Operation method)</a>
-</li>
-        <li><a href="apidocs/operations.html#operations.pipe.Pipe.validate_context">(Pipe method)</a>
-</li>
-        <li><a href="apidocs/operations.html#operations.sequence.Sequence.validate_context">(Sequence method)</a>
-</li>
-      </ul></li>
-  </ul></td>
 </tr></table>
 
 <h2 id="W">W</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="apidocs/shellparser.html#shellparser.parser.ShellTransformer.WHITESPACE">WHITESPACE() (ShellTransformer method)</a>
+      <li><a href="apidocs/parser.html#parser.command_transformer.CommandTransformer.WHITESPACE">WHITESPACE() (CommandTransformer method)</a>
+
+      <ul>
+        <li><a href="apidocs/parser.html#parser.highlight_transformer.HighlightTransformer.WHITESPACE">(HighlightTransformer method)</a>
 </li>
+      </ul></li>
   </ul></td>
 </tr></table>
 

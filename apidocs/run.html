@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>&lt;no title&gt; &mdash; Comp0010 Shell Python P14  documentation</title>
+  <title>Run &mdash; Comp0010 Shell Python P14  documentation</title>
   
 
   
@@ -40,7 +40,9 @@
 
     
     <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" /> 
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Prompt" href="prompt.html" />
+    <link rel="prev" title="Parser" href="parser.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -85,12 +87,7 @@
               
             
             
-              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../markdown/getting-started.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../markdown/getting-started.html#running">Running</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Documentation</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Documentation</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../markdown/intro.html">COMP0010 Shell</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../markdown/language.html">Language</a></li>
@@ -109,14 +106,16 @@
 <li class="toctree-l1"><a class="reference internal" href="../markdown/development.html#testing">Testing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../markdown/development.html#code-style">Code style</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Source Code</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="apps.html">apps</a></li>
-<li class="toctree-l1"><a class="reference internal" href="common.html">common</a></li>
-<li class="toctree-l1"><a class="reference internal" href="exceptions.html">exceptions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="operations.html">operations</a></li>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="shell.html">Shell</a></li>
-<li class="toctree-l1"><a class="reference internal" href="shellparser.html">shellparser</a></li>
+<li class="toctree-l1"><a class="reference internal" href="parser.html">Parser</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Run</a></li>
+<li class="toctree-l1"><a class="reference internal" href="prompt.html">Prompt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apps.html">Apps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="commands.html">Commands</a></li>
+<li class="toctree-l1"><a class="reference internal" href="exceptions.html">Exceptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="common.html">Common</a></li>
 </ul>
 
             
@@ -165,13 +164,13 @@
     
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>&lt;no title&gt;</li>
+      <li>Run</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="../_sources/apidocs/modules.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/apidocs/run.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -184,52 +183,14 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="apps.html">apps</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="apps.html#app">app</a></li>
-<li class="toctree-l2"><a class="reference internal" href="apps.html#app-factory">app_factory</a></li>
-<li class="toctree-l2"><a class="reference internal" href="apps.html#cat">cat</a></li>
-<li class="toctree-l2"><a class="reference internal" href="apps.html#cd">cd</a></li>
-<li class="toctree-l2"><a class="reference internal" href="apps.html#cut">cut</a></li>
-<li class="toctree-l2"><a class="reference internal" href="apps.html#echo">echo</a></li>
-<li class="toctree-l2"><a class="reference internal" href="apps.html#find">find</a></li>
-<li class="toctree-l2"><a class="reference internal" href="apps.html#grep">grep</a></li>
-<li class="toctree-l2"><a class="reference internal" href="apps.html#head">head</a></li>
-<li class="toctree-l2"><a class="reference internal" href="apps.html#ls">ls</a></li>
-<li class="toctree-l2"><a class="reference internal" href="apps.html#pwd">pwd</a></li>
-<li class="toctree-l2"><a class="reference internal" href="apps.html#sort">sort</a></li>
-<li class="toctree-l2"><a class="reference internal" href="apps.html#tail">tail</a></li>
-<li class="toctree-l2"><a class="reference internal" href="apps.html#uniq">uniq</a></li>
-<li class="toctree-l2"><a class="reference internal" href="apps.html#unsafe">unsafe</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="common.html">common</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="common.html#tools">Tools</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="exceptions.html">exceptions</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="exceptions.html#app-not-found-error">App Not Found Error</a></li>
-<li class="toctree-l2"><a class="reference internal" href="exceptions.html#context-error">Context Error</a></li>
-<li class="toctree-l2"><a class="reference internal" href="exceptions.html#run-error">Run Error</a></li>
-<li class="toctree-l2"><a class="reference internal" href="exceptions.html#shell-error">Shell Error</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="operations.html">operations</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="operations.html#call">Call</a></li>
-<li class="toctree-l2"><a class="reference internal" href="operations.html#operation">Operation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="operations.html#operation-factory">Operation Factory</a></li>
-<li class="toctree-l2"><a class="reference internal" href="operations.html#pipe">Pipe</a></li>
-<li class="toctree-l2"><a class="reference internal" href="operations.html#sequence">Sequence</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="shell.html">Shell</a></li>
-<li class="toctree-l1"><a class="reference internal" href="shellparser.html">shellparser</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="shellparser.html#grammar-lark">grammar.lark</a></li>
-<li class="toctree-l2"><a class="reference internal" href="shellparser.html#parser">parser</a></li>
-</ul>
-</li>
-</ul>
+  <span class="target" id="module-run"></span><div class="section" id="run">
+<h1>Run<a class="headerlink" href="#run" title="Permalink to this headline">¶</a></h1>
+<p>This module runs the application.</p>
+<ol class="arabic simple">
+<li><p>If <code class="docutils literal notranslate"><span class="pre">-c</span></code> flag was provided it will execute the shell
+directly and print out the output.</p></li>
+<li><p>If run normally it will start an interactive shell prompt session.</p></li>
+</ol>
 </div>
 
 
@@ -237,6 +198,10 @@
            
           </div>
           <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="prompt.html" class="btn btn-neutral float-right" title="Prompt" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="parser.html" class="btn btn-neutral float-left" title="Parser" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
 
   <hr/>
 

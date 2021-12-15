@@ -88,12 +88,7 @@
               
             
             
-              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="markdown/getting-started.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="markdown/getting-started.html#running">Running</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Documentation</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Documentation</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="markdown/intro.html">COMP0010 Shell</a></li>
 <li class="toctree-l1"><a class="reference internal" href="markdown/language.html">Language</a></li>
@@ -112,14 +107,16 @@
 <li class="toctree-l1"><a class="reference internal" href="markdown/development.html#testing">Testing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="markdown/development.html#code-style">Code style</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Source Code</span></p>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="apidocs/apps.html">apps</a></li>
-<li class="toctree-l1"><a class="reference internal" href="apidocs/common.html">common</a></li>
-<li class="toctree-l1"><a class="reference internal" href="apidocs/exceptions.html">exceptions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="apidocs/operations.html">operations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="apidocs/shell.html">Shell</a></li>
-<li class="toctree-l1"><a class="reference internal" href="apidocs/shellparser.html">shellparser</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apidocs/parser.html">Parser</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apidocs/run.html">Run</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apidocs/prompt.html">Prompt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apidocs/apps.html">Apps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apidocs/commands.html">Commands</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apidocs/exceptions.html">Exceptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apidocs/common.html">Common</a></li>
 </ul>
 
             
@@ -190,7 +187,8 @@
    <a href="#cap-a"><strong>a</strong></a> | 
    <a href="#cap-c"><strong>c</strong></a> | 
    <a href="#cap-e"><strong>e</strong></a> | 
-   <a href="#cap-o"><strong>o</strong></a> | 
+   <a href="#cap-p"><strong>p</strong></a> | 
+   <a href="#cap-r"><strong>r</strong></a> | 
    <a href="#cap-s"><strong>s</strong></a>
    </div>
 
@@ -223,6 +221,11 @@
        <td></td>
        <td>&#160;&#160;&#160;
        <a href="apidocs/apps.html#module-apps.cd"><code class="xref">apps.cd</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-1">
+       <td></td>
+       <td>&#160;&#160;&#160;
+       <a href="apidocs/apps.html#module-apps.clear"><code class="xref">apps.clear</code></a></td><td>
        <em></em></td></tr>
      <tr class="cg-1">
        <td></td>
@@ -286,9 +289,40 @@
        <td><img src="_static/minus.png" class="toggler"
               id="toggle-2" style="display: none" alt="-" /></td>
        <td>
-       <a href="apidocs/common.html#module-common"><code class="xref">common</code></a></td><td>
+       <a href="apidocs/commands.html#module-commands"><code class="xref">commands</code></a></td><td>
        <em></em></td></tr>
      <tr class="cg-2">
+       <td></td>
+       <td>&#160;&#160;&#160;
+       <a href="apidocs/commands.html#module-commands.call"><code class="xref">commands.call</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-2">
+       <td></td>
+       <td>&#160;&#160;&#160;
+       <a href="apidocs/commands.html#module-commands.command"><code class="xref">commands.command</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-2">
+       <td></td>
+       <td>&#160;&#160;&#160;
+       <a href="apidocs/commands.html#module-commands.command_factory"><code class="xref">commands.command_factory</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-2">
+       <td></td>
+       <td>&#160;&#160;&#160;
+       <a href="apidocs/commands.html#module-commands.pipe"><code class="xref">commands.pipe</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-2">
+       <td></td>
+       <td>&#160;&#160;&#160;
+       <a href="apidocs/commands.html#module-commands.sequence"><code class="xref">commands.sequence</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td><img src="_static/minus.png" class="toggler"
+              id="toggle-3" style="display: none" alt="-" /></td>
+       <td>
+       <a href="apidocs/common.html#module-common"><code class="xref">common</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-3">
        <td></td>
        <td>&#160;&#160;&#160;
        <a href="apidocs/common.html#module-common.tools"><code class="xref">common.tools</code></a></td><td>
@@ -298,63 +332,87 @@
        <strong>e</strong></td><td></td></tr>
      <tr>
        <td><img src="_static/minus.png" class="toggler"
-              id="toggle-3" style="display: none" alt="-" /></td>
+              id="toggle-4" style="display: none" alt="-" /></td>
        <td>
        <a href="apidocs/exceptions.html#module-exceptions"><code class="xref">exceptions</code></a></td><td>
        <em></em></td></tr>
-     <tr class="cg-3">
+     <tr class="cg-4">
        <td></td>
        <td>&#160;&#160;&#160;
        <a href="apidocs/exceptions.html#module-exceptions.appnotfounderr"><code class="xref">exceptions.appnotfounderr</code></a></td><td>
        <em></em></td></tr>
-     <tr class="cg-3">
+     <tr class="cg-4">
        <td></td>
        <td>&#160;&#160;&#160;
        <a href="apidocs/exceptions.html#module-exceptions.contexterr"><code class="xref">exceptions.contexterr</code></a></td><td>
        <em></em></td></tr>
-     <tr class="cg-3">
+     <tr class="cg-4">
        <td></td>
        <td>&#160;&#160;&#160;
        <a href="apidocs/exceptions.html#module-exceptions.runerr"><code class="xref">exceptions.runerr</code></a></td><td>
        <em></em></td></tr>
-     <tr class="cg-3">
+     <tr class="cg-4">
        <td></td>
        <td>&#160;&#160;&#160;
        <a href="apidocs/exceptions.html#module-exceptions.shellerr"><code class="xref">exceptions.shellerr</code></a></td><td>
        <em></em></td></tr>
+     <tr class="cg-4">
+       <td></td>
+       <td>&#160;&#160;&#160;
+       <a href="apidocs/exceptions.html#module-exceptions.syntaxerr"><code class="xref">exceptions.syntaxerr</code></a></td><td>
+       <em></em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-o"><td></td><td>
-       <strong>o</strong></td><td></td></tr>
+     <tr class="cap" id="cap-p"><td></td><td>
+       <strong>p</strong></td><td></td></tr>
      <tr>
        <td><img src="_static/minus.png" class="toggler"
-              id="toggle-4" style="display: none" alt="-" /></td>
+              id="toggle-5" style="display: none" alt="-" /></td>
        <td>
-       <a href="apidocs/operations.html#module-operations"><code class="xref">operations</code></a></td><td>
+       <a href="apidocs/parser.html#module-parser"><code class="xref">parser</code></a></td><td>
        <em></em></td></tr>
-     <tr class="cg-4">
+     <tr class="cg-5">
        <td></td>
        <td>&#160;&#160;&#160;
-       <a href="apidocs/operations.html#module-operations.call"><code class="xref">operations.call</code></a></td><td>
+       <a href="apidocs/parser.html#module-parser.command_transformer"><code class="xref">parser.command_transformer</code></a></td><td>
        <em></em></td></tr>
-     <tr class="cg-4">
+     <tr class="cg-5">
        <td></td>
        <td>&#160;&#160;&#160;
-       <a href="apidocs/operations.html#module-operations.operation"><code class="xref">operations.operation</code></a></td><td>
+       <a href="apidocs/parser.html#module-parser.highlight_transformer"><code class="xref">parser.highlight_transformer</code></a></td><td>
        <em></em></td></tr>
-     <tr class="cg-4">
+     <tr class="cg-5">
        <td></td>
        <td>&#160;&#160;&#160;
-       <a href="apidocs/operations.html#module-operations.operation_factory"><code class="xref">operations.operation_factory</code></a></td><td>
+       <a href="apidocs/parser.html#module-parser.parser"><code class="xref">parser.parser</code></a></td><td>
        <em></em></td></tr>
-     <tr class="cg-4">
+     <tr>
+       <td><img src="_static/minus.png" class="toggler"
+              id="toggle-6" style="display: none" alt="-" /></td>
+       <td>
+       <a href="apidocs/prompt.html#module-prompt"><code class="xref">prompt</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-6">
        <td></td>
        <td>&#160;&#160;&#160;
-       <a href="apidocs/operations.html#module-operations.pipe"><code class="xref">operations.pipe</code></a></td><td>
+       <a href="apidocs/prompt.html#module-prompt.completer"><code class="xref">prompt.completer</code></a></td><td>
        <em></em></td></tr>
-     <tr class="cg-4">
+     <tr class="cg-6">
        <td></td>
        <td>&#160;&#160;&#160;
-       <a href="apidocs/operations.html#module-operations.sequence"><code class="xref">operations.sequence</code></a></td><td>
+       <a href="apidocs/prompt.html#module-prompt.conf"><code class="xref">prompt.conf</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-6">
+       <td></td>
+       <td>&#160;&#160;&#160;
+       <a href="apidocs/prompt.html#module-prompt.shellsession"><code class="xref">prompt.shellsession</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-r"><td></td><td>
+       <strong>r</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="apidocs/run.html#module-run"><code class="xref">run</code></a></td><td>
        <em></em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-s"><td></td><td>
@@ -363,17 +421,6 @@
        <td></td>
        <td>
        <a href="apidocs/shell.html#module-shell"><code class="xref">shell</code></a></td><td>
-       <em></em></td></tr>
-     <tr>
-       <td><img src="_static/minus.png" class="toggler"
-              id="toggle-5" style="display: none" alt="-" /></td>
-       <td>
-       <a href="apidocs/shellparser.html#module-shellparser"><code class="xref">shellparser</code></a></td><td>
-       <em></em></td></tr>
-     <tr class="cg-5">
-       <td></td>
-       <td>&#160;&#160;&#160;
-       <a href="apidocs/shellparser.html#module-shellparser.parser"><code class="xref">shellparser.parser</code></a></td><td>
        <em></em></td></tr>
    </table>
 

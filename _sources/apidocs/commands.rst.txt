@@ -1,35 +1,36 @@
-Exceptions
-==========
+Commands
+========
 
-.. automodule:: exceptions
+.. automodule:: commands
 
 
 
-.. automodule:: exceptions.appnotfounderr
+
+.. automodule:: commands.command
    :members:
    :undoc-members:
    :show-inheritance:
 
 
-.. automodule:: exceptions.contexterr
+.. automodule:: commands.command_factory
    :members:
    :undoc-members:
    :show-inheritance:
 
 
-.. automodule:: exceptions.runerr
+.. automodule:: commands.call
    :members:
    :undoc-members:
    :show-inheritance:
 
 
-.. automodule:: exceptions.shellerr
+.. automodule:: commands.pipe
    :members:
    :undoc-members:
    :show-inheritance:
 
 
-.. automodule:: exceptions.syntaxerr
+.. automodule:: commands.sequence
    :members:
    :undoc-members:
    :show-inheritance:
