@@ -1,0 +1,347 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Exceptions &mdash; Comp0010 Shell Python P14  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Common" href="common.html" />
+    <link rel="prev" title="Commands" href="commands.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Comp0010 Shell Python P14
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../markdown/intro.html">COMP0010 Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../markdown/language.html">Language</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../markdown/applications.html">Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../markdown/interface.html">Command Line Interface</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Extra Functionality</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../markdown/features.html">Added Features</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Development</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../markdown/development.html">Program Flow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../markdown/development.html#file-structure">File Structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../markdown/development.html#architectures">Architectures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../markdown/development.html#testing">Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../markdown/development.html#code-style">Code style</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="shell.html">Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="parser.html">Parser</a></li>
+<li class="toctree-l1"><a class="reference internal" href="run.html">Run</a></li>
+<li class="toctree-l1"><a class="reference internal" href="prompt.html">Prompt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apps.html">Apps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="commands.html">Commands</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Exceptions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#app-not-found-error">App Not Found Error</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#context-error">Context Error</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#run-error">Run Error</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#shell-error">Shell Error</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#shell-syntax-error">Shell Syntax Error</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="common.html">Common</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Comp0010 Shell Python P14</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Exceptions</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/apidocs/exceptions.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-exceptions">
+<span id="exceptions"></span><h1>Exceptions<a class="headerlink" href="#module-exceptions" title="Permalink to this headline">¶</a></h1>
+<p>This module contains exceptions that shell will be raising and handling.
+There is one common interface <code class="docutils literal notranslate"><span class="pre">AppExcpetion</span></code> and 3 concrete implementations
+of that interface.</p>
+<span class="target" id="module-exceptions.appnotfounderr"></span><div class="section" id="app-not-found-error">
+<h2>App Not Found Error<a class="headerlink" href="#app-not-found-error" title="Permalink to this headline">¶</a></h2>
+<p>An error that is raised whenever an app is not found.</p>
+<dl class="py exception">
+<dt class="sig sig-object py" id="exceptions.appnotfounderr.AppNotFoundError">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">AppNotFoundError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">app_str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#exceptions.appnotfounderr.AppNotFoundError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#exceptions.shellerr.ShellError" title="exceptions.shellerr.ShellError"><code class="xref py py-class docutils literal notranslate"><span class="pre">exceptions.shellerr.ShellError</span></code></a></p>
+<p>Errors that occur when shell doesn’t know the app you are trying to run</p>
+<p>These errors are called by the <cite>AppFactory</cite>, in case it is not aware of
+the app you are trying to run. Using an unsafe signature will not
+prevent this error from appearing.</p>
+</dd></dl>
+
+</div>
+<span class="target" id="module-exceptions.contexterr"></span><div class="section" id="context-error">
+<h2>Context Error<a class="headerlink" href="#context-error" title="Permalink to this headline">¶</a></h2>
+<p>They prevent apps from being run.</p>
+<dl class="py exception">
+<dt class="sig sig-object py" id="exceptions.contexterr.ContextError">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ContextError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">app_str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'GO</span> <span class="pre">AWAY</span> <span class="pre">&gt;=['</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#exceptions.contexterr.ContextError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#exceptions.shellerr.ShellError" title="exceptions.shellerr.ShellError"><code class="xref py py-class docutils literal notranslate"><span class="pre">exceptions.shellerr.ShellError</span></code></a></p>
+<p>Context errors that prevent apps from being run</p>
+<p>Each app has a <code class="docutils literal notranslate"><span class="pre">validate_args()</span></code> method that is run right before the
+app is run. This method will check options that are passed to the app
+and raise <code class="docutils literal notranslate"><span class="pre">ContextError</span></code> if they don’t make sense.
+<code class="docutils literal notranslate"><span class="pre">ContextError</span></code> exists to prevent apps from running
+when they are doomed to fail based on options alone,
+which should hopefully prevent wasting some CPU power when it’s
+unnecessary.</p>
+<p>These errors <strong>WILL</strong> be ignored with <strong>unsafe</strong> apps.</p>
+</dd></dl>
+
+</div>
+<span class="target" id="module-exceptions.runerr"></span><div class="section" id="run-error">
+<h2>Run Error<a class="headerlink" href="#run-error" title="Permalink to this headline">¶</a></h2>
+<p>Errors that are raised during runtime.</p>
+<dl class="py exception">
+<dt class="sig sig-object py" id="exceptions.runerr.RunError">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">RunError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">app_str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Oops,</span> <span class="pre">something</span> <span class="pre">went</span> <span class="pre">wrong'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#exceptions.runerr.RunError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#exceptions.shellerr.ShellError" title="exceptions.shellerr.ShellError"><code class="xref py py-class docutils literal notranslate"><span class="pre">exceptions.shellerr.ShellError</span></code></a></p>
+<p>Errors that occur during app’s runtime</p>
+<p>Even if an app passes context checking phase, it can still cause some
+errors. Whenever this happens an <cite>AppRunException</cite> is raised.</p>
+<p>These errors <strong>WILL</strong> be ignored with <em>unsafe</em> apps.</p>
+</dd></dl>
+
+</div>
+<span class="target" id="module-exceptions.shellerr"></span><div class="section" id="shell-error">
+<h2>Shell Error<a class="headerlink" href="#shell-error" title="Permalink to this headline">¶</a></h2>
+<p>General error interface</p>
+<dl class="py exception">
+<dt class="sig sig-object py" id="exceptions.shellerr.ShellError">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ShellError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">app_str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Err'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#exceptions.shellerr.ShellError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
+<p>Exception interface for our errors</p>
+<p>Some exceptions that are raised within our shell are expected behaviour.
+App exceptions will only stop or prevent apps from running.
+They will not cause the whole shell process to stop.
+All app exceptions are aware of the app that caused an exception
+and aware of an appropriate message to show.
+These exceptions are handled on the highest level of command execution.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="exceptions.shellerr.ShellError.app_str">
+<span class="sig-name descname"><span class="pre">app_str</span></span><a class="headerlink" href="#exceptions.shellerr.ShellError.app_str" title="Permalink to this definition">¶</a></dt>
+<dd><p>Name of the app.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="exceptions.shellerr.ShellError.message">
+<span class="sig-name descname"><span class="pre">message</span></span><a class="headerlink" href="#exceptions.shellerr.ShellError.message" title="Permalink to this definition">¶</a></dt>
+<dd><p>Part of the message that will occur once
+an exception is raised.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<span class="target" id="module-exceptions.syntaxerr"></span><div class="section" id="shell-syntax-error">
+<h2>Shell Syntax Error<a class="headerlink" href="#shell-syntax-error" title="Permalink to this headline">¶</a></h2>
+<p>Error wrapper for lark’s VisitError.
+It is raised whenever the parsing fails.</p>
+<dl class="py exception">
+<dt class="sig sig-object py" id="exceptions.syntaxerr.ShellSyntaxError">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ShellSyntaxError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Wrong</span> <span class="pre">Syntax'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#exceptions.syntaxerr.ShellSyntaxError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#exceptions.shellerr.ShellError" title="exceptions.shellerr.ShellError"><code class="xref py py-class docutils literal notranslate"><span class="pre">exceptions.shellerr.ShellError</span></code></a></p>
+<p>Errors that appears on failed parsing of the input string.</p>
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="common.html" class="btn btn-neutral float-right" title="Common" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="commands.html" class="btn btn-neutral float-left" title="Commands" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Adi Bozzhanov, Ilya Kosorukov, Oluwaponmile Femi-Sunmaila.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
