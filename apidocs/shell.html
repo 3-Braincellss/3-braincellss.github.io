@@ -96,7 +96,9 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Extra Functionality</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../markdown/features.html">Added Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../markdown/features.html">Features Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../markdown/features.html#applications">Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../markdown/features.html#extra-utility">Extra Utility</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Development</span></p>
 <ul>
@@ -192,6 +194,29 @@
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Main shell class</p>
 <p>Initialises parser and transformer instances.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="shell.Shell.parser">
+<span class="sig-name descname"><span class="pre">parser</span></span><a class="headerlink" href="#shell.Shell.parser" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parser that is used in producing the AST.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="parser.html#parser.parser.ShellParser" title="parser.parser.ShellParser">ShellParser</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="shell.Shell.transformer">
+<span class="sig-name descname"><span class="pre">transformer</span></span><a class="headerlink" href="#shell.Shell.transformer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Transformer that is used in
+creation of the <code class="docutils literal notranslate"><span class="pre">Command</span></code> object to be run.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="parser.html#parser.command_transformer.CommandTransformer" title="parser.command_transformer.CommandTransformer">CommandTransformer</a></p>
+</dd>
+</dl>
+</dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="shell.Shell.execute">
 <span class="sig-name descname"><span class="pre">execute</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#shell.Shell.execute" title="Permalink to this definition">¶</a></dt>
@@ -201,7 +226,7 @@
 <dd class="field-odd"><p><strong>input_str</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code>) – input string representing a command.</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>output as a string</p>
+<dd class="field-even"><p>outuput text</p>
 </dd>
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p>(<code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code>)</p>

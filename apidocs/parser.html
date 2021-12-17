@@ -96,7 +96,9 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Extra Functionality</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../markdown/features.html">Added Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../markdown/features.html">Features Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../markdown/features.html#applications">Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../markdown/features.html#extra-utility">Extra Utility</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Development</span></p>
 <ul>
@@ -110,10 +112,7 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="shell.html">Shell</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Parser</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#module-contents">Module Contents</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#grammar-lark">grammar.lark</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-contents">Module Contents</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#shellparser">ShellParser</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#command-transformer">Command Transformer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#highlight-transformer">Highlight Transformer</a></li>
@@ -202,8 +201,6 @@ This is done with our <code class="docutils literal notranslate"><span class="pr
 wrapper to <code class="docutils literal notranslate"><span class="pre">lark</span></code>’s default parser.</p>
 <p>Here is the grammar according to which <code class="docutils literal notranslate"><span class="pre">ShellParser</span></code> produces
 the <strong>AST</strong>.</p>
-<div class="section" id="grammar-lark">
-<h3>grammar.lark<a class="headerlink" href="#grammar-lark" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>%import common.LETTER
 
 command : pipe | seq | call | WHITESPACE
@@ -242,7 +239,6 @@ WHITESPACE           : /[\s]+/
 <li><p><code class="docutils literal notranslate"><span class="pre">CommandTransformer</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">HighlightTransformer</span></code></p></li>
 </ul>
-</div>
 </div>
 <span class="target" id="module-parser.parser"></span><div class="section" id="shellparser">
 <h2>ShellParser<a class="headerlink" href="#shellparser" title="Permalink to this headline">¶</a></h2>
@@ -566,21 +562,21 @@ back quotes</p>
 </div>
 <span class="target" id="module-parser.highlight_transformer"></span><div class="section" id="highlight-transformer">
 <h2>Highlight Transformer<a class="headerlink" href="#highlight-transformer" title="Permalink to this headline">¶</a></h2>
-<p>Converts the <strong>AST</strong> into a formatted text instance.</p>
-<p>Any mention of <cite>formatted text</cite> in this document means:</p>
+<p>Converts the <strong>Lark AST</strong> into a formatted text instance.</p>
+<p>Any mention of <strong>formatted text</strong> in this document means:</p>
 <p>A list of tuples of the following format:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">[(</span><span class="s2">&quot;style_str1&quot;</span><span class="p">,</span> <span class="s2">&quot;text_1&quot;</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;style_str2&quot;</span><span class="p">,</span> <span class="s2">&quot;text_2&quot;</span><span class="p">),</span> <span class="o">...</span><span class="p">]</span>
 </pre></div>
 </div>
-<p>Possible style classes are:</p>
+<p>Possible style classes are
+- <code class="docutils literal notranslate"><span class="pre">oper</span></code>: operation style (<code class="docutils literal notranslate"><span class="pre">|</span></code>, <code class="docutils literal notranslate"><span class="pre">;</span></code>)</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">oper</span></code>: operation style (<a href="#id1"><span class="problematic" id="id2">|</span></a>, ;)</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">arg</span></code>: Arguments that weren’t affected by context changes.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">app</span></code>: Apps that are recognised by AppFactory will be styled accordingly.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">path</span></code>: If an argument is an existing path.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">err</span></code>: Apps that are not recognised by appfactory or general error style.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">unsafe</span></code>: Unsafe apps that are recognised by AppFactory</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">redir</span></code>: redirections (&lt;, &gt;)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">redir</span></code>: redirections (<code class="docutils literal notranslate"><span class="pre">&lt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&gt;</span></code>)</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">quotes</span></code>: Any quotes.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">space</span></code>: whitespaces.</p></li>
 </ul>
@@ -588,28 +584,36 @@ back quotes</p>
 <dt class="sig sig-object py" id="parser.highlight_transformer.HighlightTransformer">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">HighlightTransformer</span></span><a class="headerlink" href="#parser.highlight_transformer.HighlightTransformer" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">lark.visitors.Transformer</span></code></p>
+<p>Custom transformer inheriting lark.visitore.Transformer</p>
+<p>Takes in the Lark AST and transforms it into Formatted Text.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="parser.highlight_transformer.HighlightTransformer.transform">
 <span class="sig-name descname"><span class="pre">transform</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tree</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#parser.highlight_transformer.HighlightTransformer.transform" title="Permalink to this definition">¶</a></dt>
-<dd><p>Transform the given tree, and return the final result</p>
+<dd><p>Overriding transform method to support
+our exceptions.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>tree</strong> – Abstract Syntax tree produced by lark.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Formatted Text.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">list</span></code></p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="parser.highlight_transformer.HighlightTransformer.command">
 <span class="sig-name descname"><span class="pre">command</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">oper</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#parser.highlight_transformer.HighlightTransformer.command" title="Permalink to this definition">¶</a></dt>
-<dd><p>Syntax:</p>
-<p><code class="docutils literal notranslate"><span class="pre">`</span>
-<span class="pre">command</span> <span class="pre">:</span> <span class="pre">pipe</span> <span class="pre">|</span> <span class="pre">seq</span> <span class="pre">|</span> <span class="pre">call</span> <span class="pre">|</span> <span class="pre">WHITESPACE</span>
-<span class="pre">`</span></code></p>
+<dd><p>Transforms a command nonterminal to formatted text.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>oper</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">list</span></code>) – Either formatted text, or a single</p></li>
-<li><p><strong>token.</strong> (<em>formatted</em>) – </p></li>
-</ul>
+<dd class="field-odd"><p><strong>oper</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">list</span></code>) – [Formatted Text]</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Formatted text as a list of tuples.</p>
+<dd class="field-even"><p>Formatted text.</p>
 </dd>
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">list</span></code></p>
@@ -620,9 +624,10 @@ back quotes</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="parser.highlight_transformer.HighlightTransformer.seq">
 <span class="sig-name descname"><span class="pre">seq</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">opers</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#parser.highlight_transformer.HighlightTransformer.seq" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="field-list simple">
+<dd><p>Transforms a sequence non-terminal to formatted text.</p>
+<dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>opers</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">list</span></code>) – 1 or 2 Formatted text instances.</p>
+<dd class="field-odd"><p><strong>opers</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">list</span></code>) – 1 or 2 Formatted Text instances.</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>Formatted text.</p>
@@ -636,7 +641,8 @@ back quotes</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="parser.highlight_transformer.HighlightTransformer.pipe">
 <span class="sig-name descname"><span class="pre">pipe</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">opers</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#parser.highlight_transformer.HighlightTransformer.pipe" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="field-list simple">
+<dd><p>Transforms a pipe non-terminal to formatted text.</p>
+<dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>op1</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">list</span></code>) – Formatted text.</p></li>
@@ -655,13 +661,11 @@ back quotes</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="parser.highlight_transformer.HighlightTransformer.call">
 <span class="sig-name descname"><span class="pre">call</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#parser.highlight_transformer.HighlightTransformer.call" title="Permalink to this definition">¶</a></dt>
-<dd><p>Transforms a list of arguments into formatted text.</p>
+<dd><p>Transforms a call non-terminal into Formatted Text.
+Adjusts style for existing and unsafe apps.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>args</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">list</span></code>) – A list of formatted text instances or</p></li>
-<li><p><strong>tokens.</strong> (<em>singular</em>) – </p></li>
-</ul>
+<dd class="field-odd"><p><strong>args</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">list</span></code>) – A list of formatted text instances.</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>Formatted text.</p>
@@ -676,48 +680,141 @@ back quotes</p>
 <dt class="sig sig-object py" id="parser.highlight_transformer.HighlightTransformer.redirection">
 <span class="sig-name descname"><span class="pre">redirection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">redirect</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#parser.highlight_transformer.HighlightTransformer.redirection" title="Permalink to this definition">¶</a></dt>
 <dd><p>Just simply forwards a redirection.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>args</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">list</span></code>) – [Formatted Text]</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Formatted Text</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">list</span></code></p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="parser.highlight_transformer.HighlightTransformer.l_redirection">
 <span class="sig-name descname"><span class="pre">l_redirection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#parser.highlight_transformer.HighlightTransformer.l_redirection" title="Permalink to this definition">¶</a></dt>
-<dd><p>Takes in an optional whitespace and arguments.</p>
+<dd><p>Combines left redirection children into
+Formatted Text.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>args</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">list</span></code>) – [Formatted Text]</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Formatted Text</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">list</span></code></p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="parser.highlight_transformer.HighlightTransformer.r_redirection">
 <span class="sig-name descname"><span class="pre">r_redirection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#parser.highlight_transformer.HighlightTransformer.r_redirection" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Combines right redirection children into
+Formatted Text.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>args</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">list</span></code>) – [Formatted Text]</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Formatted Text</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">list</span></code></p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="parser.highlight_transformer.HighlightTransformer.arguments">
 <span class="sig-name descname"><span class="pre">arguments</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#parser.highlight_transformer.HighlightTransformer.arguments" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Adjusts style of the argument if its a path
+and returns a formatted text.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>args</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">list</span></code>) – Formatted Text</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Formatted Text</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">list</span></code></p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="parser.highlight_transformer.HighlightTransformer.quoted">
 <span class="sig-name descname"><span class="pre">quoted</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#parser.highlight_transformer.HighlightTransformer.quoted" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Converts quote string into tuple of
+Formatted Text.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>args</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">list</span></code>) – [<code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code>]</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Formated Tuple</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">tuple</span></code></p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="parser.highlight_transformer.HighlightTransformer.double_quoted">
 <span class="sig-name descname"><span class="pre">double_quoted</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#parser.highlight_transformer.HighlightTransformer.double_quoted" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Adds quoting to double quote content.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>args</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">list</span></code>) – [<code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code>]</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>string with double quotes</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code></p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="parser.highlight_transformer.HighlightTransformer.single_quoted">
 <span class="sig-name descname"><span class="pre">single_quoted</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#parser.highlight_transformer.HighlightTransformer.single_quoted" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Adds quoting to single quote content.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>args</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">list</span></code>) – [<code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code>]</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>string with single quotes</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code></p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="parser.highlight_transformer.HighlightTransformer.back_quoted">
 <span class="sig-name descname"><span class="pre">back_quoted</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#parser.highlight_transformer.HighlightTransformer.back_quoted" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="parser.highlight_transformer.HighlightTransformer.UNQUOTED">
-<span class="sig-name descname"><span class="pre">UNQUOTED</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#parser.highlight_transformer.HighlightTransformer.UNQUOTED" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Adds quoting to back quote content.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>args</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">list</span></code>) – [<code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code>]</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>string with back quotes</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code></p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="parser.highlight_transformer.HighlightTransformer.DOUBLE_QUOTE_CONTENT">
@@ -738,9 +835,38 @@ back quotes</p>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="parser.highlight_transformer.HighlightTransformer.UNQUOTED">
+<span class="sig-name descname"><span class="pre">UNQUOTED</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#parser.highlight_transformer.HighlightTransformer.UNQUOTED" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts UNQUOTED lark token into Formatted Tuple.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>x</strong> – UNQUOTED Lark Token.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Formatted Tuple.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">tuple</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="parser.highlight_transformer.HighlightTransformer.WHITESPACE">
 <span class="sig-name descname"><span class="pre">WHITESPACE</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#parser.highlight_transformer.HighlightTransformer.WHITESPACE" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Converts WHITESPACE lark token into Formatted Tuple.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>x</strong> – WHITESPACE Lark Token.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Formatted Text.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">list</span></code></p>
+</dd>
+</dl>
+</dd></dl>
 
 </dd></dl>
 

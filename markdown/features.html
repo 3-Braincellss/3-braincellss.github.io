@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Added Features &mdash; Comp0010 Shell Python P14  documentation</title>
+  <title>Features Overview &mdash; Comp0010 Shell Python P14  documentation</title>
   
 
   
@@ -96,11 +96,18 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Extra Functionality</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Added Features</a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Features Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#applications">Applications</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#clear">clear</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#mkdir">mkdir</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#rm">rm</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#extra-utility">Extra Utility</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#key-bindings">Key Bindings</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#command-buffer">Command Buffer</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#syntax-highlighting">Syntax Highlighting</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#text-completion">Text Completion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#syntax-highlighting">Syntax Highlighting</a></li>
 </ul>
 </li>
 </ul>
@@ -170,7 +177,7 @@
     
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>Added Features</li>
+      <li>Features Overview</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -189,34 +196,88 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="added-features">
-<h1>Added Features<a class="headerlink" href="#added-features" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="features-overview">
+<h1>Features Overview<a class="headerlink" href="#features-overview" title="Permalink to this headline">¶</a></h1>
 <p>The features listed in our specification for the development of the shell consisted of adding more applications, unsafe application variants, piping, redirecting, command substitution as well as general refactoring.</p>
 <p>This section will highlight the additional features added to the shell that were not requested but we thought would make a more effective shell.</p>
+</div>
+<div class="section" id="applications">
+<h1>Applications<a class="headerlink" href="#applications" title="Permalink to this headline">¶</a></h1>
+<p>These are additional commands that the original shell did not contain, allowing users to perform more tasks through their terminal.</p>
 <div class="section" id="clear">
 <h2>clear<a class="headerlink" href="#clear" title="Permalink to this headline">¶</a></h2>
-<p>Just like in traditional shell, the Comp0010 Shell supports the <code class="docutils literal notranslate"><span class="pre">clear</span></code> command, which will remove all text from the terminal.</p>
+<p>Will remove all text from the terminal.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">clear</span>
 </pre></div>
 </div>
 </div>
+<div class="section" id="mkdir">
+<h2>mkdir<a class="headerlink" href="#mkdir" title="Permalink to this headline">¶</a></h2>
+<p>Creates directories at the specified paths.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mkdir</span> <span class="p">[</span><span class="n">PATH</span><span class="p">]</span><span class="o">...</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">PATH</span></code> represents the directory to be created.</p></li>
+</ul>
+</div>
+<div class="section" id="rm">
+<h2>rm<a class="headerlink" href="#rm" title="Permalink to this headline">¶</a></h2>
+<p>Deletes empty directories and files.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rmd</span> <span class="p">[</span><span class="n">OPTIONS</span><span class="p">]</span> <span class="p">[</span><span class="n">PATH</span><span class="p">]</span><span class="o">...</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">PATH</span></code> represents the directory to be created.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">OPTIONS</span></code>:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">-r</span></code> Recursively deletes items within a directory, then the directory itself.</p></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="extra-utility">
+<h1>Extra Utility<a class="headerlink" href="#extra-utility" title="Permalink to this headline">¶</a></h1>
+<p>Additions here are essentially quality of life changes, allowing users to make use of the shell in a more effective manner. All of these changes are easilly made possible by using PromptSession from <code class="docutils literal notranslate"><span class="pre">prompt_toolkit</span></code> library.</p>
+<div class="section" id="key-bindings">
+<h2>Key Bindings<a class="headerlink" href="#key-bindings" title="Permalink to this headline">¶</a></h2>
+<p>Our shell fully supports <code class="docutils literal notranslate"><span class="pre">Emacs</span></code> keybindings by default.</p>
+<ul class="simple">
+<li><p>Ctrl-p - up arrow</p></li>
+<li><p>Ctrl-n - down arrow</p></li>
+<li><p>Ctrl-a - go to beginning of the line</p></li>
+<li><p>Ctrl-e - go to the end of the line</p></li>
+<li><p>Ctrl-k - kill everything to the right of the cursor</p></li>
+</ul>
+<p>and more…</p>
+</div>
 <div class="section" id="command-buffer">
 <h2>Command Buffer<a class="headerlink" href="#command-buffer" title="Permalink to this headline">¶</a></h2>
-<p>The Comp0010 has it’s own command buffer, meaning that users will be able to use the up and down arrow keys in order to quickly navigate between previously entered commands.</p>
-</div>
-<div class="section" id="syntax-highlighting">
-<h2>Syntax Highlighting<a class="headerlink" href="#syntax-highlighting" title="Permalink to this headline">¶</a></h2>
-<p>Unlike the standard terminal found on most systems, the Comp0010 shell has syntax highlighting. Things that will be highlighted include:</p>
-<ul class="simple">
-<li><p>Applications (<code class="docutils literal notranslate"><span class="pre">app</span></code>, <code class="docutils literal notranslate"><span class="pre">ls</span></code>, etc)</p></li>
-<li><p>Operations (<code class="docutils literal notranslate"><span class="pre">|</span></code>, <code class="docutils literal notranslate"><span class="pre">&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">;</span></code>)</p></li>
-<li><p>Valid file paths</p></li>
-<li><p>Invalid commands</p></li>
-</ul>
+<p><img alt="image buffer" src="../_images/buffer_demo.gif" /></p>
+<p>Just like any normal shell, our shell has a command buffer!
+You can navigate through the history of previosly ran
+commands using arrow keys</p>
 </div>
 <div class="section" id="text-completion">
 <h2>Text Completion<a class="headerlink" href="#text-completion" title="Permalink to this headline">¶</a></h2>
+<p><img alt="image completion" src="../_images/completion_demo.gif" /></p>
 <p>Pressing tab while typing a command in the Comp0010 Shell will automatically insert valid paths.</p>
+</div>
+<div class="section" id="syntax-highlighting">
+<h2>Syntax Highlighting<a class="headerlink" href="#syntax-highlighting" title="Permalink to this headline">¶</a></h2>
+<p><img alt="image highlighting" src="../_images/highlighting.png" /></p>
+<p>By combining features from <code class="docutils literal notranslate"><span class="pre">lark</span></code> and <code class="docutils literal notranslate"><span class="pre">prompt_toolkit</span></code> libraries we were able to come up with
+contextual syntax highlighting for our shell.</p>
+<ul class="simple">
+<li><p>It will only highlight the app, if our shell recognises it.
+In case our shell is not aware of the app, it will highlight it red.</p></li>
+<li><p>Unsafe Apps are highlighted differently to normal apps.</p></li>
+<li><p>If an argument to a command is an existing path, it will get underlined.</p></li>
+<li><p>If it detects that the syntax of the currently typed command is incorrect the whole input
+will get highlighted red.</p></li>
+<li><p>It also highlights quotations pipes and sequences.</p></li>
+</ul>
 </div>
 </div>
 

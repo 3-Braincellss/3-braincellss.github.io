@@ -94,7 +94,9 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Extra Functionality</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="markdown/features.html">Added Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="markdown/features.html">Features Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="markdown/features.html#applications">Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="markdown/features.html#extra-utility">Extra Utility</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Development</span></p>
 <ul>
@@ -276,8 +278,6 @@
         <li><a href="apidocs/apps.html#module-apps.echo">module</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li>
     apps.find
 
@@ -285,6 +285,8 @@
         <li><a href="apidocs/apps.html#module-apps.find">module</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li>
     apps.grep
 
@@ -307,10 +309,24 @@
 </li>
       </ul></li>
       <li>
+    apps.mkdir
+
+      <ul>
+        <li><a href="apidocs/apps.html#module-apps.mkdir">module</a>
+</li>
+      </ul></li>
+      <li>
     apps.pwd
 
       <ul>
         <li><a href="apidocs/apps.html#module-apps.pwd">module</a>
+</li>
+      </ul></li>
+      <li>
+    apps.rm
+
+      <ul>
+        <li><a href="apidocs/apps.html#module-apps.rm">module</a>
 </li>
       </ul></li>
       <li>
@@ -599,6 +615,8 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="apidocs/exceptions.html#exceptions.shellerr.ShellError.message">message (ShellError attribute)</a>
 </li>
+      <li><a href="apidocs/apps.html#apps.mkdir.MkdirApp">MkdirApp (class in apps.mkdir)</a>
+</li>
       <li>
     module
 
@@ -627,7 +645,11 @@
 </li>
         <li><a href="apidocs/apps.html#module-apps.ls">apps.ls</a>
 </li>
+        <li><a href="apidocs/apps.html#module-apps.mkdir">apps.mkdir</a>
+</li>
         <li><a href="apidocs/apps.html#module-apps.pwd">apps.pwd</a>
+</li>
+        <li><a href="apidocs/apps.html#module-apps.rm">apps.rm</a>
 </li>
         <li><a href="apidocs/apps.html#module-apps.sort">apps.sort</a>
 </li>
@@ -729,6 +751,8 @@
         <li><a href="apidocs/parser.html#module-parser">module</a>
 </li>
       </ul></li>
+      <li><a href="apidocs/shell.html#shell.Shell.parser">parser (Shell attribute)</a>
+</li>
       <li>
     parser.command_transformer
 
@@ -752,14 +776,14 @@
       </ul></li>
       <li><a href="apidocs/commands.html#commands.pipe.Pipe">Pipe (class in commands.pipe)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="apidocs/parser.html#parser.command_transformer.CommandTransformer.pipe">pipe() (CommandTransformer method)</a>
 
       <ul>
         <li><a href="apidocs/parser.html#parser.highlight_transformer.HighlightTransformer.pipe">(HighlightTransformer method)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="apidocs/common.html#common.tools.prettify_path">prettify_path() (in module common.tools)</a>
 </li>
       <li>
@@ -828,6 +852,8 @@
       </ul></li>
       <li><a href="apidocs/commands.html#commands.call.Call.right_red">right_red (Call attribute)</a>
 </li>
+      <li><a href="apidocs/apps.html#apps.rm.RmApp">RmApp (class in apps.rm)</a>
+</li>
       <li>
     run
 
@@ -860,9 +886,13 @@
 </li>
         <li><a href="apidocs/apps.html#apps.ls.LsApp.run">(LsApp method)</a>
 </li>
+        <li><a href="apidocs/apps.html#apps.mkdir.MkdirApp.run">(MkdirApp method)</a>
+</li>
         <li><a href="apidocs/commands.html#commands.pipe.Pipe.run">(Pipe method)</a>
 </li>
         <li><a href="apidocs/apps.html#apps.pwd.PwdApp.run">(PwdApp method)</a>
+</li>
+        <li><a href="apidocs/apps.html#apps.rm.RmApp.run">(RmApp method)</a>
 </li>
         <li><a href="apidocs/commands.html#commands.sequence.Sequence.run">(Sequence method)</a>
 </li>
@@ -940,14 +970,16 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="apidocs/apps.html#apps.tail.TailApp">TailApp (class in apps.tail)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="apidocs/parser.html#parser.command_transformer.CommandTransformer.transform">transform() (CommandTransformer method)</a>
 
       <ul>
         <li><a href="apidocs/parser.html#parser.highlight_transformer.HighlightTransformer.transform">(HighlightTransformer method)</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="apidocs/shell.html#shell.Shell.transformer">transformer (Shell attribute)</a>
+</li>
   </ul></td>
 </tr></table>
 
@@ -991,7 +1023,11 @@
 </li>
         <li><a href="apidocs/apps.html#apps.ls.LsApp.validate_args">(LsApp method)</a>
 </li>
+        <li><a href="apidocs/apps.html#apps.mkdir.MkdirApp.validate_args">(MkdirApp method)</a>
+</li>
         <li><a href="apidocs/apps.html#apps.pwd.PwdApp.validate_args">(PwdApp method)</a>
+</li>
+        <li><a href="apidocs/apps.html#apps.rm.RmApp.validate_args">(RmApp method)</a>
 </li>
         <li><a href="apidocs/apps.html#apps.sort.SortApp.validate_args">(SortApp method)</a>
 </li>

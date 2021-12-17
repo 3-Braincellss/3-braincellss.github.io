@@ -96,7 +96,9 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Extra Functionality</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../markdown/features.html">Added Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../markdown/features.html">Features Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../markdown/features.html#applications">Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../markdown/features.html#extra-utility">Extra Utility</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Development</span></p>
 <ul>
@@ -128,6 +130,8 @@
 <li class="toctree-l2"><a class="reference internal" href="#sort">sort</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#tail">tail</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#uniq">uniq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#mkdir">mkdir</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#rm">rm</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#unsafe">unsafe</a></li>
 </ul>
 </li>
@@ -264,7 +268,7 @@ execution.</p>
 <p>A class used to create app objects</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="apps.app_factory.AppFactory.apps">
-<span class="sig-name descname"><span class="pre">apps</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'cat':</span> <span class="pre">&lt;class</span> <span class="pre">'apps.cat.CatApp'&gt;,</span> <span class="pre">'cd':</span> <span class="pre">&lt;class</span> <span class="pre">'apps.cd.CdApp'&gt;,</span> <span class="pre">'clear':</span> <span class="pre">&lt;class</span> <span class="pre">'apps.clear.ClearApp'&gt;,</span> <span class="pre">'cut':</span> <span class="pre">&lt;class</span> <span class="pre">'apps.cut.CutApp'&gt;,</span> <span class="pre">'echo':</span> <span class="pre">&lt;class</span> <span class="pre">'apps.echo.EchoApp'&gt;,</span> <span class="pre">'find':</span> <span class="pre">&lt;class</span> <span class="pre">'apps.find.FindApp'&gt;,</span> <span class="pre">'grep':</span> <span class="pre">&lt;class</span> <span class="pre">'apps.grep.GrepApp'&gt;,</span> <span class="pre">'head':</span> <span class="pre">&lt;class</span> <span class="pre">'apps.head.HeadApp'&gt;,</span> <span class="pre">'ls':</span> <span class="pre">&lt;class</span> <span class="pre">'apps.ls.LsApp'&gt;,</span> <span class="pre">'mkdir':</span> <span class="pre">&lt;class</span> <span class="pre">'apps.mkdir.MkdirApp'&gt;,</span> <span class="pre">'pwd':</span> <span class="pre">&lt;class</span> <span class="pre">'apps.pwd.PwdApp'&gt;,</span> <span class="pre">'sort':</span> <span class="pre">&lt;class</span> <span class="pre">'apps.sort.SortApp'&gt;,</span> <span class="pre">'tail':</span> <span class="pre">&lt;class</span> <span class="pre">'apps.tail.TailApp'&gt;,</span> <span class="pre">'uniq':</span> <span class="pre">&lt;class</span> <span class="pre">'apps.uniq.UniqApp'&gt;}</span></em><a class="headerlink" href="#apps.app_factory.AppFactory.apps" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">apps</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'cat':</span> <span class="pre">&lt;class</span> <span class="pre">'apps.cat.CatApp'&gt;,</span> <span class="pre">'cd':</span> <span class="pre">&lt;class</span> <span class="pre">'apps.cd.CdApp'&gt;,</span> <span class="pre">'clear':</span> <span class="pre">&lt;class</span> <span class="pre">'apps.clear.ClearApp'&gt;,</span> <span class="pre">'cut':</span> <span class="pre">&lt;class</span> <span class="pre">'apps.cut.CutApp'&gt;,</span> <span class="pre">'echo':</span> <span class="pre">&lt;class</span> <span class="pre">'apps.echo.EchoApp'&gt;,</span> <span class="pre">'find':</span> <span class="pre">&lt;class</span> <span class="pre">'apps.find.FindApp'&gt;,</span> <span class="pre">'grep':</span> <span class="pre">&lt;class</span> <span class="pre">'apps.grep.GrepApp'&gt;,</span> <span class="pre">'head':</span> <span class="pre">&lt;class</span> <span class="pre">'apps.head.HeadApp'&gt;,</span> <span class="pre">'ls':</span> <span class="pre">&lt;class</span> <span class="pre">'apps.ls.LsApp'&gt;,</span> <span class="pre">'mkdir':</span> <span class="pre">&lt;class</span> <span class="pre">'apps.mkdir.MkdirApp'&gt;,</span> <span class="pre">'pwd':</span> <span class="pre">&lt;class</span> <span class="pre">'apps.pwd.PwdApp'&gt;,</span> <span class="pre">'rm':</span> <span class="pre">&lt;class</span> <span class="pre">'apps.rm.RmApp'&gt;,</span> <span class="pre">'sort':</span> <span class="pre">&lt;class</span> <span class="pre">'apps.sort.SortApp'&gt;,</span> <span class="pre">'tail':</span> <span class="pre">&lt;class</span> <span class="pre">'apps.tail.TailApp'&gt;,</span> <span class="pre">'uniq':</span> <span class="pre">&lt;class</span> <span class="pre">'apps.uniq.UniqApp'&gt;}</span></em><a class="headerlink" href="#apps.app_factory.AppFactory.apps" title="Permalink to this definition">¶</a></dt>
 <dd><p>A dictionary that maps app names to their classes</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
@@ -1031,6 +1035,113 @@ identical to the previous line in the file.</p>
 <dt class="sig sig-object py" id="apps.uniq.UniqApp.validate_args">
 <span class="sig-name descname"><span class="pre">validate_args</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#apps.uniq.UniqApp.validate_args" title="Permalink to this definition">¶</a></dt>
 <dd><p>No args need to be checked for this application</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<span class="target" id="module-apps.mkdir"></span><div class="section" id="mkdir">
+<h2>mkdir<a class="headerlink" href="#mkdir" title="Permalink to this headline">¶</a></h2>
+<p>Module representing the mkdir application
+Usage in shell: mkdir [PATH]+</p>
+<p class="rubric">Example</p>
+<p><code class="docutils literal notranslate"><span class="pre">mkdir</span> <span class="pre">mega_dir</span> <span class="pre">ultra_dir</span> <span class="pre">turbo_dir</span></code></p>
+<dl class="py class">
+<dt class="sig sig-object py" id="apps.mkdir.MkdirApp">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">MkdirApp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#apps.mkdir.MkdirApp" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#apps.app.App" title="apps.app.App"><code class="xref py py-class docutils literal notranslate"><span class="pre">apps.app.App</span></code></a></p>
+<p>A class representing the mkdir shell instruction.</p>
+<p>Args:
+args (<code class="xref py py-obj docutils literal notranslate"><span class="pre">list</span></code>): Contains all the arguments and options
+of the instruction.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="apps.mkdir.MkdirApp.run">
+<span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inp</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#apps.mkdir.MkdirApp.run" title="Permalink to this definition">¶</a></dt>
+<dd><p>Executes the mkdir command on the given path.</p>
+<p>Creates a directory for each argument specified.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>inp</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">deque</span></code>, <em>optional</em>) – The input args of the command,
+only used for piping and redirects. Not used in this
+application.m</p></li>
+<li><p><strong>out</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">deque</span></code>) – The output deque, used to store
+the result of execution, in this case the deque will not
+be altered.</p></li>
+</ul>
+</dd>
+</dl>
+<p>Returns:
+<code class="docutils literal notranslate"><span class="pre">deque</span></code>: The output deque will contain each of the files that
+matched the specified pattern</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="apps.mkdir.MkdirApp.validate_args">
+<span class="sig-name descname"><span class="pre">validate_args</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#apps.mkdir.MkdirApp.validate_args" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ensures all arguments either represent a valid path
+or a single new directory name.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><a class="reference internal" href="exceptions.html#exceptions.contexterr.ContextError" title="exceptions.contexterr.ContextError"><strong>ContextError</strong></a> – If the path to the path being added does not exist.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<span class="target" id="module-apps.rm"></span><div class="section" id="rm">
+<h2>rm<a class="headerlink" href="#rm" title="Permalink to this headline">¶</a></h2>
+<p>Module representing the mkdir application
+Usage in shell: rm [OPTIONS] [PATH]+</p>
+<p class="rubric">Example</p>
+<p><code class="docutils literal notranslate"><span class="pre">rm</span> <span class="pre">useless_file</span></code></p>
+<dl class="py class">
+<dt class="sig sig-object py" id="apps.rm.RmApp">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">RmApp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#apps.rm.RmApp" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#apps.app.App" title="apps.app.App"><code class="xref py py-class docutils literal notranslate"><span class="pre">apps.app.App</span></code></a></p>
+<p>A class representing the rm shell instruction.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>args</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">list</span></code>) – Contains all the arguments and options
+of the instruction.</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><a class="reference internal" href="exceptions.html#exceptions.contexterr.ContextError" title="exceptions.contexterr.ContextError"><strong>ContextError</strong></a> – If any invalid options are given.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="apps.rm.RmApp.run">
+<span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inp</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#apps.rm.RmApp.run" title="Permalink to this definition">¶</a></dt>
+<dd><p>Executes the rm command on the given path.</p>
+<p>Deletes a directory/file for each argument specified.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>inp</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">deque</span></code>, <em>optional</em>) – The input args of the command,
+only used for piping and redirects. Not used in this
+application.</p></li>
+<li><p><strong>out</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">deque</span></code>) – The output deque, used to store
+the result of execution, in this case the deque will not
+be altered.</p></li>
+</ul>
+</dd>
+</dl>
+<p>Returns:
+<code class="docutils literal notranslate"><span class="pre">deque</span></code>: The output deque will contain each of the files that
+matched the specified pattern</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="apps.rm.RmApp.validate_args">
+<span class="sig-name descname"><span class="pre">validate_args</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#apps.rm.RmApp.validate_args" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ensures all arguments are valid paths.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><a class="reference internal" href="exceptions.html#exceptions.contexterr.ContextError" title="exceptions.contexterr.ContextError"><strong>ContextError</strong></a> – If the path to the path does not exist.</p>
+</dd>
+</dl>
 </dd></dl>
 
 </dd></dl>
