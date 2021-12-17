@@ -104,7 +104,12 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Program Flow</a></li>
 <li class="toctree-l1"><a class="reference internal" href="#file-structure">File Structure</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#architectures">Architectures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#architecture">Architecture</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#main-modules">Main Modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#global-modules">Global Modules</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="#testing">Testing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="#code-style">Code style</a></li>
 </ul>
@@ -191,8 +196,35 @@
 <div class="section" id="file-structure">
 <h1>File Structure<a class="headerlink" href="#file-structure" title="Permalink to this headline">¶</a></h1>
 </div>
-<div class="section" id="architectures">
-<h1>Architectures<a class="headerlink" href="#architectures" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="architecture">
+<h1>Architecture<a class="headerlink" href="#architecture" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>Our design includes a total of 7 modules.</p>
+<ul class="simple">
+<li><p>Prompt</p></li>
+<li><p>Shell</p></li>
+<li><p>Parser</p></li>
+<li><p>Commands</p></li>
+<li><p>Apps</p></li>
+<li><p>Exceptions (Global)</p></li>
+<li><p>Common (Global)</p></li>
+</ul>
+<p>The ones that we marked as <code class="docutils literal notranslate"><span class="pre">Global</span></code> can potentially be used
+in any module.</p>
+</div>
+<div class="section" id="main-modules">
+<h2>Main Modules<a class="headerlink" href="#main-modules" title="Permalink to this headline">¶</a></h2>
+<p>Here is the UML diagram for our main modules.</p>
+<p><img alt="image uml1" src="../_images/uml1.svg" /></p>
+<p>blah blah blah add some text here</p>
+</div>
+<div class="section" id="global-modules">
+<h2>Global Modules<a class="headerlink" href="#global-modules" title="Permalink to this headline">¶</a></h2>
+<p>Exceptions and common.</p>
+<p><img alt="image uml2" src="../_images/uml2.svg" /></p>
+<p>blah blah blah add more text here.</p>
+</div>
 </div>
 <div class="section" id="testing">
 <h1>Testing<a class="headerlink" href="#testing" title="Permalink to this headline">¶</a></h1>
